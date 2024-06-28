@@ -22,7 +22,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-#include "chipmunk_private.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/chipmunk_private.h>
 
 static inline cpSpatialIndexClass *Klass();
 

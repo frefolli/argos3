@@ -19,10 +19,10 @@
  * SOFTWARE.
  */
 
-#include "stdlib.h"
-#include "stdio.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-#include "chipmunk_private.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/chipmunk_private.h>
 
 static inline cpSpatialIndexClass *Klass();
 
@@ -837,8 +837,8 @@ cpBBTreeOptimize(cpSpatialIndex *index)
 
 //#define CP_BBTREE_DEBUG_DRAW
 #ifdef CP_BBTREE_DEBUG_DRAW
-#include "OpenGL/gl.h"
-#include "OpenGL/glu.h"
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
 #include <GLUT/glut.h>
 
 static void

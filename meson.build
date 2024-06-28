@@ -1,4 +1,4 @@
-project('argos_simulator', 'cpp',
+project('argos_simulator', ['c', 'cpp'],
   version : '3.0.1',
   default_options : ['warning_level=3',
                      'cpp_std=c++20'])
@@ -202,6 +202,35 @@ argos3plugin_simulator_dynamics2d = shared_library('argos3plugin_simulator_dynam
     'src/plugins/simulator/physics_engines/dynamics2d/dynamics2d_box_model.cpp',
     'src/plugins/simulator/physics_engines/dynamics2d/dynamics2d_engine.cpp',
     'src/plugins/simulator/physics_engines/dynamics2d/dynamics2d_gripping.cpp',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpShape.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpSpatialIndex.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpCollision.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/chipmunk.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpArray.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpSpaceStep.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpSpaceQuery.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpSpace.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpVect.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpArbiter.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpHashSet.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpBody.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpPolyShape.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpSweep1D.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpBBTree.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpSpaceHash.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpPinJoint.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpGearJoint.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpRatchetJoint.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpDampedRotarySpring.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpDampedSpring.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpSimpleMotor.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpRotaryLimitJoint.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpSlideJoint.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpPivotJoint.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpGrooveJoint.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/constraints/cpConstraint.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpSpaceComponent.c',
+    'src/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/src/cpBB.c'
   ], include_directories: include,
   dependencies: argos_deps,
   link_with: [argos3core_simulator])
@@ -434,7 +463,7 @@ argos3plugin_simulator_spiri = shared_library('argos3plugin_simulator_spiri', [
     'src/plugins/robots/spiri/simulator/qtopengl_spiri.cpp',
   ], include_directories: include,
   dependencies: argos_deps,
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_genericrobot])
+  link_with: [argos3core_simulator, argos3plugin_simulator_qtopengl, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_media, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
 
 # argos3plugin_simulator_eyebot
 argos3plugin_simulator_eyebot = shared_library('argos3plugin_simulator_eyebot', [
@@ -447,7 +476,7 @@ argos3plugin_simulator_eyebot = shared_library('argos3plugin_simulator_eyebot', 
     'src/plugins/robots/eye-bot/simulator/pointmass3d_eyebot_model.cpp',
   ], include_directories: include,
   dependencies: argos_deps,
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_genericrobot])
+  link_with: [argos3core_simulator, argos3plugin_simulator_qtopengl, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_media, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
 
 # argos3plugin_simulator_pipuck
 argos3plugin_simulator_pipuck = shared_library('argos3plugin_simulator_pipuck', [
@@ -474,7 +503,7 @@ argos3plugin_simulator_pipuck = shared_library('argos3plugin_simulator_pipuck', 
     'src/plugins/robots/pi-puck/simulator/pipuck_differential_drive_default_sensor.cpp',
   ], include_directories: include,
   dependencies: argos_deps,
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
+  link_with: [argos3core_simulator, argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_media, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
 
 # argos3plugin_simulator_block
 argos3plugin_simulator_block = shared_library('argos3plugin_simulator_block', [
@@ -483,7 +512,7 @@ argos3plugin_simulator_block = shared_library('argos3plugin_simulator_block', [
     'src/plugins/robots/block/simulator/dynamics3d_block_model.cpp',
   ], include_directories: include,
   dependencies: argos_deps,
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
+  link_with: [argos3core_simulator, argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_media, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
 
 # argos3plugin_simulator_epuck
 argos3plugin_simulator_epuck = shared_library('argos3plugin_simulator_epuck', [
@@ -495,7 +524,7 @@ argos3plugin_simulator_epuck = shared_library('argos3plugin_simulator_epuck', [
     'src/plugins/robots/e-puck/simulator/epuck_proximity_default_sensor.cpp',
   ], include_directories: include,
   dependencies: argos_deps,
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_genericrobot])
+  link_with: [argos3core_simulator, argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_media, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
 
 # argos3plugin_simulator_builderbot
 argos3plugin_simulator_builderbot = shared_library('argos3plugin_simulator_builderbot', [
@@ -527,7 +556,7 @@ argos3plugin_simulator_builderbot = shared_library('argos3plugin_simulator_build
     'src/plugins/robots/builderbot/simulator/builderbot_lift_system_entity.cpp',
   ], include_directories: include,
   dependencies: argos_deps,
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
+  link_with: [argos3core_simulator, argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_media, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
 
 # argos3plugin_simulator_prototype
 argos3plugin_simulator_prototype = shared_library('argos3plugin_simulator_prototype', [
@@ -544,7 +573,7 @@ argos3plugin_simulator_prototype = shared_library('argos3plugin_simulator_protot
     'src/plugins/robots/prototype/simulator/dynamics3d_prototype_model.cpp',
   ], include_directories: include,
   dependencies: argos_deps,
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_genericrobot])
+  link_with: [argos3core_simulator, argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_media, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
 
 # argos3plugin_simulator_footbot
 argos3plugin_simulator_footbot = shared_library('argos3plugin_simulator_footbot', [
@@ -575,7 +604,7 @@ argos3plugin_simulator_footbot = shared_library('argos3plugin_simulator_footbot'
     'src/plugins/robots/foot-bot/simulator/footbot_distance_scanner_default_actuator.cpp',
   ], include_directories: include,
   dependencies: argos_deps,
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_genericrobot])
+  link_with: [argos3core_simulator, argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_media, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
 
 # argos3plugin_simulator_drone
 argos3plugin_simulator_drone = shared_library('argos3plugin_simulator_drone', [
@@ -596,7 +625,7 @@ argos3plugin_simulator_drone = shared_library('argos3plugin_simulator_drone', [
     'src/plugins/robots/drone/simulator/drone_entity.cpp',
   ], include_directories: include,
   dependencies: argos_deps,
-  link_with: [argos3core_simulator, argos3plugin_simulator_genericrobot, argos3plugin_simulator_entities, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_qtopengl])
+  link_with: [argos3core_simulator, argos3plugin_simulator_genericrobot, argos3plugin_simulator_media, argos3plugin_simulator_entities, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_qtopengl])
 
 # argos3plugin_simulator_dynamics3d_floor
 argos3plugin_simulator_dynamics3d_floor = shared_library('argos3plugin_simulator_dynamics3d_floor', [

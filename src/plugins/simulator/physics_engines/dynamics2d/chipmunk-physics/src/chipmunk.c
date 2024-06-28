@@ -24,7 +24,7 @@
 #include <math.h>
 #include <stdarg.h>
 
-#include "chipmunk_private.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/chipmunk_private.h>
 
 //#ifdef __cplusplus
 //extern "C" {
@@ -167,4 +167,4 @@ cpMomentForBox2(cpFloat m, cpBB box)
 	return cpMomentForBox(m, width, height) + m*cpvlengthsq(offset);
 }
 
-#include "chipmunk_ffi.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/chipmunk_ffi.h>

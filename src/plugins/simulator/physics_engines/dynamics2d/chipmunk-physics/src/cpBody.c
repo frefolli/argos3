@@ -23,8 +23,8 @@
 #include <float.h>
 #include <math.h>
 
-#include "chipmunk_private.h"
-#include "constraints/util.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/chipmunk_private.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/constraints/util.h>
 
 // initialized in cpInitChipmunk()
 cpBody cpStaticBodySingleton;

@@ -22,8 +22,8 @@
 #include <math.h>
 #include <stdlib.h>
 
-#include "chipmunk_private.h"
-#include "prime.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/chipmunk_private.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/prime.h>
 
 typedef struct cpSpaceHashBin cpSpaceHashBin;
 typedef struct cpHandle cpHandle;
@@ -608,8 +608,8 @@ static inline cpSpatialIndexClass *Klass(){return &klass;}
 
 //#define CP_BBTREE_DEBUG_DRAW
 #ifdef CP_BBTREE_DEBUG_DRAW
-#include "OpenGL/gl.h"
-#include "OpenGL/glu.h"
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
 #include <GLUT/glut.h>
 
 void
