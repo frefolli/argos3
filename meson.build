@@ -1,4 +1,4 @@
-project('argos_simulator', ['c', 'cpp'],
+project('argos3_simulator', ['c', 'cpp'],
   version : '3.0.1',
   default_options : ['warning_level=3',
                      'cpp_std=c++20'])
@@ -47,7 +47,6 @@ argos3core_simulator = shared_library('argos3core_simulator', [
     'src/core/simulator/space/space_multi_thread.cpp',
     'src/core/simulator/space/space_no_threads.cpp',
     'src/core/simulator/visualization/default_visualization.cpp',
-    'src/core/simulator/query_plugins.cpp',
     'src/core/simulator/argos_command_line_arg_parser.cpp',
     'src/core/simulator/simulator.cpp',
     'src/core/simulator/medium/medium.cpp',
@@ -60,7 +59,6 @@ argos3core_simulator = shared_library('argos3core_simulator', [
     'src/core/simulator/entity/composable_entity.cpp',
     'src/core/simulator/entity/floor_entity.cpp',
     'src/core/simulator/entity/positional_entity.cpp',
-    'src/core/simulator/main.cpp',
     'src/core/utility/datatypes/byte_array.cpp',
     'src/core/utility/datatypes/color.cpp',
     'src/core/utility/logging/argos_log.cpp',
@@ -654,3 +652,10 @@ argos3plugin_simulator_dynamics3d_srocs = shared_library('argos3plugin_simulator
   ], include_directories: include,
   dependencies: argos_deps,
   link_with: [argos3core_simulator, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_builderbot, argos3plugin_simulator_block])
+
+argos3 = executable('argos3', [
+    'src/core/simulator/query_plugins.cpp',
+    'src/core/simulator/main.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3core_simulator])

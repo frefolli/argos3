@@ -2,7 +2,7 @@ prefix=/usr
 exec_prefix=${prefix}
 
 Name: ARGoS
-Description: A C++ library for Swarm Robotics
+Description: A fast, parallel, multi-physics, and multi-robot simulator
 Requires:
-Version: 3.0.0
-Libs: -L${prefix}/lib/argos3 -largos3core_simulator -largos3plugin_simulator_eyebot -largos3plugin_simulator_prototype -largos3plugin_simulator_dynamics2d -largos3plugin_simulator_footbot -largos3plugin_simulator_qtopengl -largos3plugin_simulator_dynamics3d -largos3plugin_simulator_genericrobot -largos3plugin_simulator_spiri -largos3plugin_simulator_entities -largos3plugin_simulator_media -largos3plugin_simulator_epuck -largos3plugin_simulator_pointmass3d
+Version: 3.0.1
+Libs: -L${prefix}/lib/argos3 -largos3core_simulator.so -largos3plugin_simulator_block.so -largos3plugin_simulator_builderbot.so -largos3plugin_simulator_drone.so -largos3plugin_simulator_dynamics2d.so -largos3plugin_simulator_dynamics3d_floor.so -largos3plugin_simulator_dynamics3d_gravity.so -largos3plugin_simulator_dynamics3d_magnetism.so -largos3plugin_simulator_dynamics3d.so -largos3plugin_simulator_dynamics3d_srocs.so -largos3plugin_simulator_entities.so -largos3plugin_simulator_epuck.so -largos3plugin_simulator_eyebot.so -largos3plugin_simulator_footbot.so -largos3plugin_simulator_genericrobot.so -largos3plugin_simulator_media.so -largos3plugin_simulator_pipuck.so -largos3plugin_simulator_pointmass3d.so -largos3plugin_simulator_prototype.so -largos3plugin_simulator_qtopengl.so -largos3plugin_simulator_spiri.so

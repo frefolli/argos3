@@ -1,6 +1,6 @@
 /build*
 install
-doc/api
+doc/html
 .emacs.desktop*
 .cproject
 .project
@@ -8,7 +8,6 @@ CMakeCache.txt
 CMakeFiles/
 CPackConfig.cmake
 CPackSourceConfig.cmake
-Doxyfile
 argos.SlackBuild
 argos3.conf
 cmake_install.cmake
@@ -18,3 +17,4 @@ TAGS
 .dir-locals.el
 .vscode*
 builddir
+target

@@ -1,29 +1,14 @@
 #!/bin/bash
 set -e
-PKGNAME=stardock
-VERSION=1.0.0
+PKGNAME=argos3_simulator
+VERSION=3.0.1
 PKGREL=1
 ARCH=x86_64
 TARGETDIR=target
 
-function _install_bin() {
-  DESTDIR=$1
-  mkdir -p ${DESTDIR}/usr/bin/
-  cp builddir/main.exe ${DESTDIR}/usr/bin/${PKGNAME}
-  mkdir -p ${DESTDIR}/usr/lib/
-  cp builddir/lib${PKGNAME}.so ${DESTDIR}/usr/lib/
-}
-
-function _install_devel() {
-  DESTDIR=$1
-  mkdir -p ${DESTDIR}/usr/include/
-  cp -r include/* ${DESTDIR}/usr/include/
-  mkdir -p ${DESTDIR}/usr/share/pkgconfig
-  cp -r ${PKGNAME}.pc ${DESTDIR}/usr/share/pkgconfig
-}
-
 function _build() {
   make
+  make docs
 }
 
 function _setup_targetdir() {
@@ -83,33 +68,22 @@ function _sign_rpm_package() {
 
 function _package_rpm() {
   _setup_rpm_buildtree
-  BIN_PACKAGE=${TARGETDIR}/rpm/SOURCES/${PKGNAME}-${VERSION}
-  DEVEL_PACKAGE=${TARGETDIR}/rpm/SOURCES/${PKGNAME}-devel-${VERSION}
-  BIN_RPM=${TARGETDIR}/rpm/RPMS/${ARCH}/${PKGNAME}-${VERSION}-${PKGREL}.${ARCH}.rpm
-  DEVEL_RPM=${TARGETDIR}/rpm/RPMS/${ARCH}/${PKGNAME}-devel-${VERSION}-${PKGREL}.${ARCH}.rpm
-  rm -rf ${BIN_PACKAGE} ${BIN_RPM}
-  rm -rf ${DEVEL_PACKAGE} ${DEVEL_RPM}
-
-  _reset ${BIN_PACKAGE}
-  _reset ${DEVEL_PACKAGE}
-  _install_bin ${BIN_PACKAGE}
-  _install_devel ${DEVEL_PACKAGE}
-  _compress ${BIN_PACKAGE}
-  _compress ${DEVEL_PACKAGE}
-  ./${PKGNAME}.spec.sh ${BIN_PACKAGE} ${PKGNAME} ${VERSION} ${PKGREL} ${ARCH} > ${TARGETDIR}/rpm/SPECS/${PKGNAME}.spec
-  ./${PKGNAME}-devel.spec.sh ${DEVEL_PACKAGE} ${PKGNAME} ${VERSION} ${PKGREL} ${ARCH} > ${TARGETDIR}/rpm/SPECS/${PKGNAME}-devel.spec
+  PACKAGE=${TARGETDIR}/rpm/SOURCES/${PKGNAME}-${VERSION}
+  RPM=${TARGETDIR}/rpm/RPMS/${ARCH}/${PKGNAME}-${VERSION}-${PKGREL}.${ARCH}.rpm
+  rm -rf ${PACKAGE} ${RPM}
+  _reset ${PACKAGE}
+  make install DESTDIR=${PACKAGE}
+  _compress ${PACKAGE}
+  ./${PKGNAME}.spec.sh ${PACKAGE} ${PKGNAME} ${VERSION} ${PKGREL} ${ARCH} > ${TARGETDIR}/rpm/SPECS/${PKGNAME}.spec
   _build_rpm_package ${PKGNAME}.spec
-  _build_rpm_package ${PKGNAME}-devel.spec
-  _sign_rpm_package ${BIN_RPM}
-  _sign_rpm_package ${DEVEL_RPM}
+  _sign_rpm_package ${RPM}
 }
 
 function _package_arch() {
   _setup_arch_buildtree
   PACKAGE=${TARGETDIR}/arch/${PKGNAME}-${VERSION}
   _reset ${PACKAGE}
-  _install_bin ${PACKAGE}
-  _install_devel ${PACKAGE}
+  make install DESTDIR=${PACKAGE}
   _compress ${PACKAGE}
   ./PKGBUILD.sh ${PACKAGE} ${PKGNAME} ${VERSION} ${PKGREL} ${ARCH} > ${TARGETDIR}/arch/PKGBUILD
   _build_arch_package
