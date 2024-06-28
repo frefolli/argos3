@@ -5,7 +5,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "pointmass3d_drone_model.h"
+#include <argos3/plugins/robots/drone/simulator/pointmass3d_drone_model.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/utility/math/cylinder.h>

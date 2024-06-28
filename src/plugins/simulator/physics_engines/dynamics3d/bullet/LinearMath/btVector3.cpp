@@ -19,7 +19,7 @@
 #define BT_USE_SSE_IN_API
 #endif
 
-#include "btVector3.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btVector3.h>
 
 #if defined BT_USE_SIMD_VECTOR3
 

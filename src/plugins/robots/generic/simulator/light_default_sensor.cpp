@@ -10,7 +10,7 @@
 #include <argos3/plugins/simulator/entities/light_entity.h>
 #include <argos3/plugins/simulator/entities/light_sensor_equipped_entity.h>
 
-#include "light_default_sensor.h"
+#include <argos3/plugins/robots/generic/simulator/light_default_sensor.h>
 
 namespace argos {
 

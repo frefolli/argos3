@@ -6,7 +6,7 @@
  * @author Michael Allwright <allsey87@gmail.com>
  */
 
-#include "rotationmatrix3.h"
+#include <argos3/core/utility/math/matrix/rotationmatrix3.h>
 
 #include <argos3/core/utility/math/quaternion.h>
 #include <argos3/core/utility/math/vector3.h>

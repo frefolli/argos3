@@ -3,7 +3,7 @@
  * @author Michael Allwright <mallwright@learnrobotics.io>
  */
 
-#include "controller.h"
+#include <argos3/testing/pi-puck/drive_forward_dynamics2d/controller.h>
 
 #include <argos3/plugins/robots/pi-puck/control_interface/ci_pipuck_differential_drive_actuator.h>
 

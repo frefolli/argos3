@@ -3,12 +3,12 @@
  *
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
-#include "qtopengl_lua_main_window.h"
-#include "qtopengl_lua_editor.h"
-#include "qtopengl_lua_find_dialog.h"
-#include "qtopengl_lua_statetree_model.h"
-#include "qtopengl_main_window.h"
-#include "qtopengl_widget.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_main_window.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_editor.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_find_dialog.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_statetree_model.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_main_window.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_widget.h>
 
 #include <argos3/core/config.h>
 #include <argos3/core/wrappers/lua/lua_controller.h>

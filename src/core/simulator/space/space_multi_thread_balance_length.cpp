@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "space_multi_thread_balance_length.h"
+#include <argos3/core/simulator/space/space_multi_thread_balance_length.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/utility/profiler/profiler.h>
 

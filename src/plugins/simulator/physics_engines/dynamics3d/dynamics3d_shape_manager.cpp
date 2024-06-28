@@ -5,7 +5,7 @@
  * @author Weixu Zhu- <zhuweixu_harry@126.com>
  */
 
-#include "dynamics3d_shape_manager.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/dynamics3d_shape_manager.h>
 #include <argos3/core/utility/configuration/argos_exception.h>
 
 namespace argos {

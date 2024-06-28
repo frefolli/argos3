@@ -4,8 +4,8 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "qtopengl_spiri.h"
-#include "spiri_entity.h"
+#include <argos3/plugins/robots/spiri/simulator/qtopengl_spiri.h>
+#include <argos3/plugins/robots/spiri/simulator/spiri_entity.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 #include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_obj_model.h>
 #include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_widget.h>

@@ -23,7 +23,7 @@ subject to the following restrictions:
 		
 */
 
-#include "btVoronoiSimplexSolver.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h>
 
 #define VERTA 0
 #define VERTB 1

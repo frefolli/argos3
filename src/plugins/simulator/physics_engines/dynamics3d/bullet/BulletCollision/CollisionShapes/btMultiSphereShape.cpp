@@ -17,7 +17,7 @@ subject to the following restrictions:
 #define BT_USE_SSE_IN_API
 #endif
 
-#include "btMultiSphereShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btMultiSphereShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btCollisionMargin.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuaternion.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btSerializer.h>

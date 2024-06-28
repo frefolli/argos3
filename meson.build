@@ -11,7 +11,7 @@ project('argos_simulator', 'cpp',
 # conf_data.set('ARGOS_WITH_LUA', true)
 # conf_data.set('ARGOS_COMPILE_QTOPENGL', true)
 # conf_data.set('ARGOS_WITH_FREEIMAGE', true)
-# conf_data.set('ARGOS_THREADSAFE_LOG', false)
+# conf_data.set('ARGOS_THREADSAFE_LOG', true)
 # conf_data.set('ARGOS_SHARED_LIBRARY_EXTENSION', 'so') # ARGOS_SHARED_LIBRARY_EXTENSION
 # conf_data.set('ARGOS_MODULE_LIBRARY_EXTENSION', 'so') # ARGOS_MODULE_LIBRARY_EXTENSION
 # conf_data.set('MESON_CXX_FLAGS', '-Wall') # ARGOS_BUILD_FLAGS
@@ -28,14 +28,17 @@ lua = dependency('lua5.4')
 threads = dependency('threads')
 opengl = dependency('opengl')
 glut = dependency('glut')
-qt6 = dependency('Qt6', modules: ['Core', 'Widgets', 'Gui', 'OpenGLWidgets'])
+glu = dependency('glu')
+qt6 = dependency('qt6', modules: ['Core', 'Widgets', 'Gui', 'OpenGLWidgets'])
+moc = import('qt6')
 freeimage = dependency('freeimage')
 dl = dependency('dl')
+argos_deps = [lua, threads, opengl, glu, glut, qt6, freeimage, dl]
 
 include = include_directories('include')
 
 # argos3core_simulator
-argos3core_simulator = library('argos3core_simulator', [
+argos3core_simulator = shared_library('argos3core_simulator', [
 #     config_h,
     'src/core/control_interface/ci_controller.cpp',
     'src/core/simulator/space/space_multi_thread_balance_length.cpp',
@@ -95,12 +98,23 @@ argos3core_simulator = library('argos3core_simulator', [
     'src/core/wrappers/lua/lua_quaternion.cpp',
     'src/core/wrappers/lua/lua_vector2.cpp',
     'src/core/wrappers/lua/lua_vector3.cpp',
-    'src/core/wrappers/lua/lua_vector2.h'
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl])
+  dependencies: argos_deps)
+
+# argos3plugin_simulator_media
+argos3plugin_simulator_media = shared_library('argos3plugin_simulator_media', [
+    'src/plugins/simulator/media/tag_medium.cpp',
+    'src/plugins/simulator/media/directional_led_medium.cpp',
+    'src/plugins/simulator/media/rab_medium.cpp',
+    'src/plugins/simulator/media/led_medium.cpp',
+    'src/plugins/simulator/media/simple_radio_medium.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3core_simulator],
+  override_options: 'b_lundef=false')
 
 # argos3plugin_simulator_entities
-argos3plugin_simulator_entities = library('argos3plugin_simulator_entities', [
+argos3plugin_simulator_entities = shared_library('argos3plugin_simulator_entities', [
     'src/plugins/simulator/entities/wheeled_entity.cpp',
     'src/plugins/simulator/entities/light_sensor_equipped_entity.cpp',
     'src/plugins/simulator/entities/directional_led_equipped_entity.cpp',
@@ -126,18 +140,31 @@ argos3plugin_simulator_entities = library('argos3plugin_simulator_entities', [
     'src/plugins/simulator/entities/led_entity.cpp',
     'src/plugins/simulator/entities/tag_entity.cpp',
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_media])
+  dependencies: argos_deps,
+  link_with: [argos3core_simulator, argos3plugin_simulator_media])
 
 # argos3plugin_simulator_qtopengl
-argos3plugin_simulator_qtopengl = library('argos3plugin_simulator_qtopengl', [
+qtopengl_processed = moc.preprocess(
+  moc_headers : [
+  './include/argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_widget.h',
+  './include/argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_application.h',
+  './include/argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_main_window.h',
+  './include/argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_camera.h',
+  './include/argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_find_dialog.h',
+  './include/argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_statetree_model.h',
+  './include/argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_main_window.h',
+  './include/argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_syntax_highlighter.h',
+  './include/argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_editor.h'
+  ]
+)
+
+argos3plugin_simulator_qtopengl = shared_library('argos3plugin_simulator_qtopengl', [
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_statetree_model.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_main_window.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_box.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_find_dialog.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_camera.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_render.cpp',
-    'src/plugins/simulator/visualizations/qt-opengl/qtopengl_joystick.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_cylinder.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_statetree_item.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_main_window.cpp',
@@ -148,34 +175,24 @@ argos3plugin_simulator_qtopengl = library('argos3plugin_simulator_qtopengl', [
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_syntax_highlighter.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_application.cpp',
     'src/plugins/simulator/visualizations/qt-opengl/qtopengl_light.cpp',
+    qtopengl_processed
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_entities])
-
-# argos3plugin_simulator_media
-argos3plugin_simulator_media = library('argos3plugin_simulator_media', [
-    'src/plugins/simulator/media/tag_medium.cpp',
-    'src/plugins/simulator/media/directional_led_medium.cpp',
-    'src/plugins/simulator/media/rab_medium.cpp',
-    'src/plugins/simulator/media/led_medium.cpp',
-    'src/plugins/simulator/media/simple_radio_medium.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3core_simulator])
+  dependencies: argos_deps,
+  link_with: [argos3core_simulator, argos3plugin_simulator_entities])
 
 # argos3plugin_simulator_pointmass3d
-argos3plugin_simulator_pointmass3d = library('argos3plugin_simulator_pointmass3d', [
+argos3plugin_simulator_pointmass3d = shared_library('argos3plugin_simulator_pointmass3d', [
     'src/plugins/simulator/physics_engines/pointmass3d/pointmass3d_box_model.cpp',
     'src/plugins/simulator/physics_engines/pointmass3d/pointmass3d_engine.cpp',
     'src/plugins/simulator/physics_engines/pointmass3d/pointmass3d_cylinder_model.cpp',
     'src/plugins/simulator/physics_engines/pointmass3d/pointmass3d_model.cpp',
     'src/plugins/simulator/physics_engines/pointmass3d/pointmass3d_quadrotor_model.cpp',
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
+  dependencies: argos_deps,
   link_with: [argos3core_simulator])
 
 # argos3plugin_simulator_dynamics2d
-argos3plugin_simulator_dynamics2d = library('argos3plugin_simulator_dynamics2d', [
+argos3plugin_simulator_dynamics2d = shared_library('argos3plugin_simulator_dynamics2d', [
     'src/plugins/simulator/physics_engines/dynamics2d/dynamics2d_cylinder_model.cpp',
     'src/plugins/simulator/physics_engines/dynamics2d/dynamics2d_single_body_object_model.cpp',
     'src/plugins/simulator/physics_engines/dynamics2d/dynamics2d_velocity_control.cpp',
@@ -186,161 +203,11 @@ argos3plugin_simulator_dynamics2d = library('argos3plugin_simulator_dynamics2d',
     'src/plugins/simulator/physics_engines/dynamics2d/dynamics2d_engine.cpp',
     'src/plugins/simulator/physics_engines/dynamics2d/dynamics2d_gripping.cpp',
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
+  dependencies: argos_deps,
   link_with: [argos3core_simulator])
 
-# argos3plugin_simulator_spiri
-argos3plugin_simulator_spiri = library('argos3plugin_simulator_spiri', [
-    'src/plugins/robots/spiri/simulator/pointmass3d_spiri_model.cpp',
-    'src/plugins/robots/spiri/simulator/spiri_entity.cpp',
-    'src/plugins/robots/spiri/simulator/qtopengl_spiri.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_genericrobot])
-
-# argos3plugin_simulator_eyebot
-argos3plugin_simulator_eyebot = library('argos3plugin_simulator_eyebot', [
-    'src/plugins/robots/eye-bot/control_interface/ci_eyebot_proximity_sensor.cpp',
-    'src/plugins/robots/eye-bot/control_interface/ci_eyebot_light_sensor.cpp',
-    'src/plugins/robots/eye-bot/simulator/eyebot_light_rotzonly_sensor.cpp',
-    'src/plugins/robots/eye-bot/simulator/eyebot_entity.cpp',
-    'src/plugins/robots/eye-bot/simulator/qtopengl_eyebot.cpp',
-    'src/plugins/robots/eye-bot/simulator/eyebot_proximity_default_sensor.cpp',
-    'src/plugins/robots/eye-bot/simulator/pointmass3d_eyebot_model.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_genericrobot])
-
-# argos3plugin_simulator_pipuck
-argos3plugin_simulator_pipuck = library('argos3plugin_simulator_pipuck', [
-    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_ground_sensor.cpp',
-    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_rangefinders_sensor.cpp',
-    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_front_camera_sensor.cpp',
-    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_system_sensor.cpp',
-    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_imu_sensor.cpp',
-    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_differential_drive_actuator.cpp',
-    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_differential_drive_sensor.cpp',
-    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_leds_actuator.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_front_camera_default_sensor.cpp',
-    'src/plugins/robots/pi-puck/simulator/dynamics3d_pipuck_model.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_ground_default_sensor.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_system_default_sensor.cpp',
-    'src/plugins/robots/pi-puck/simulator/dynamics2d_pipuck_model.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_differential_drive_default_actuator.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_imu_default_sensor.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_differential_drive_entity.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_leds_default_actuator.cpp',
-    'src/plugins/robots/pi-puck/simulator/qtopengl_pipuck.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_entity.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_rangefinders_default_sensor.cpp',
-    'src/plugins/robots/pi-puck/simulator/pipuck_differential_drive_default_sensor.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
-
-# argos3plugin_simulator_block
-argos3plugin_simulator_block = library('argos3plugin_simulator_block', [
-    'src/plugins/robots/block/simulator/block_entity.cpp',
-    'src/plugins/robots/block/simulator/qtopengl_block.cpp',
-    'src/plugins/robots/block/simulator/dynamics3d_block_model.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
-
-# argos3plugin_simulator_epuck
-argos3plugin_simulator_epuck = library('argos3plugin_simulator_epuck', [
-    'src/plugins/robots/e-puck/control_interface/ci_epuck_proximity_sensor.cpp',
-    'src/plugins/robots/e-puck/simulator/dynamics2d_epuck_model.cpp',
-    'src/plugins/robots/e-puck/simulator/dynamics3d_epuck_model.cpp',
-    'src/plugins/robots/e-puck/simulator/qtopengl_epuck.cpp',
-    'src/plugins/robots/e-puck/simulator/epuck_entity.cpp',
-    'src/plugins/robots/e-puck/simulator/epuck_proximity_default_sensor.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_genericrobot])
-
-# argos3plugin_simulator_builderbot
-argos3plugin_simulator_builderbot = library('argos3plugin_simulator_builderbot', [
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_leds_actuator.cpp',
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_lift_system_actuator.cpp',
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_differential_drive_sensor.cpp',
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_electromagnet_system_actuator.cpp',
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_lift_system_sensor.cpp',
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_rangefinders_sensor.cpp',
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_camera_system_sensor.cpp',
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_differential_drive_actuator.cpp',
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_system_sensor.cpp',
-    'src/plugins/robots/builderbot/control_interface/ci_builderbot_electromagnet_system_sensor.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_lift_system_default_actuator.cpp',
-    'src/plugins/robots/builderbot/simulator/qtopengl_builderbot.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_differential_drive_entity.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_electromagnet_system_entity.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_rangefinders_default_sensor.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_camera_system_default_sensor.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_electromagnet_system_default_actuator.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_lift_system_default_sensor.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_electromagnet_system_default_sensor.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_system_default_sensor.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_differential_drive_default_sensor.cpp',
-    'src/plugins/robots/builderbot/simulator/dynamics3d_builderbot_model.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_entity.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_differential_drive_default_actuator.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_leds_default_actuator.cpp',
-    'src/plugins/robots/builderbot/simulator/builderbot_lift_system_entity.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
-
-# argos3plugin_simulator_prototype
-argos3plugin_simulator_prototype = library('argos3plugin_simulator_prototype', [
-    'src/plugins/robots/prototype/control_interface/ci_prototype_joints_sensor.cpp',
-    'src/plugins/robots/prototype/control_interface/ci_prototype_joints_actuator.cpp',
-    'src/plugins/robots/prototype/simulator/prototype_joints_default_actuator.cpp',
-    'src/plugins/robots/prototype/simulator/prototype_joint_entity.cpp',
-    'src/plugins/robots/prototype/simulator/prototype_link_equipped_entity.cpp',
-    'src/plugins/robots/prototype/simulator/prototype_link_entity.cpp',
-    'src/plugins/robots/prototype/simulator/prototype_joints_default_sensor.cpp',
-    'src/plugins/robots/prototype/simulator/prototype_entity.cpp',
-    'src/plugins/robots/prototype/simulator/qtopengl_prototype.cpp',
-    'src/plugins/robots/prototype/simulator/prototype_joint_equipped_entity.cpp',
-    'src/plugins/robots/prototype/simulator/dynamics3d_prototype_model.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_genericrobot])
-
-# argos3plugin_simulator_footbot
-argos3plugin_simulator_footbot = library('argos3plugin_simulator_footbot', [
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_motor_ground_sensor.cpp',
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_base_ground_sensor.cpp',
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_distance_scanner_sensor.cpp',
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_proximity_sensor.cpp',
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_light_sensor.cpp',
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_turret_encoder_sensor.cpp',
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_encoder_sensor.cpp',
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_distance_scanner_actuator.cpp',
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_gripper_actuator.cpp',
-    'src/plugins/robots/foot-bot/control_interface/ci_footbot_turret_actuator.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_distance_scanner_equipped_entity.cpp',
-    'src/plugins/robots/foot-bot/simulator/dynamics2d_footbot_model.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_gripper_default_actuator.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_turret_entity.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_turret_default_actuator.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_motor_ground_rotzonly_sensor.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_distance_scanner_rotzonly_sensor.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_light_rotzonly_sensor.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_proximity_default_sensor.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_entity.cpp',
-    'src/plugins/robots/foot-bot/simulator/qtopengl_footbot.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_base_ground_rotzonly_sensor.cpp',
-    'src/plugins/robots/foot-bot/simulator/pointmass3d_footbot_model.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_turret_encoder_default_sensor.cpp',
-    'src/plugins/robots/foot-bot/simulator/footbot_distance_scanner_default_actuator.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_genericrobot])
-
 # argos3plugin_simulator_genericrobot
-argos3plugin_simulator_genericrobot = library('argos3plugin_simulator_genericrobot', [
+argos3plugin_simulator_genericrobot = shared_library('argos3plugin_simulator_genericrobot', [
     'src/plugins/robots/generic/control_interface/ci_quadrotor_position_actuator.cpp',
     'src/plugins/robots/generic/control_interface/ci_magnets_actuator.cpp',
     'src/plugins/robots/generic/control_interface/ci_directional_leds_actuator.cpp',
@@ -392,32 +259,11 @@ argos3plugin_simulator_genericrobot = library('argos3plugin_simulator_genericrob
     'src/plugins/robots/generic/simulator/proximity_default_sensor.cpp',
     'src/plugins/robots/generic/simulator/colored_blob_perspective_camera_default_sensor.cpp',
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
+  dependencies: argos_deps,
   link_with: [argos3core_simulator, argos3plugin_simulator_entities, argos3plugin_simulator_media])
 
-# argos3plugin_simulator_drone
-argos3plugin_simulator_drone = library('argos3plugin_simulator_drone', [
-    'src/plugins/robots/drone/control_interface/ci_drone_flight_system_actuator.cpp',
-    'src/plugins/robots/drone/control_interface/ci_drone_leds_actuator.cpp',
-    'src/plugins/robots/drone/control_interface/ci_drone_rangefinders_sensor.cpp',
-    'src/plugins/robots/drone/control_interface/ci_drone_system_sensor.cpp',
-    'src/plugins/robots/drone/control_interface/ci_drone_flight_system_sensor.cpp',
-    'src/plugins/robots/drone/control_interface/ci_drone_cameras_system_sensor.cpp',
-    'src/plugins/robots/drone/simulator/drone_flight_system_default_sensor.cpp',
-    'src/plugins/robots/drone/simulator/drone_leds_default_actuator.cpp',
-    'src/plugins/robots/drone/simulator/qtopengl_drone.cpp',
-    'src/plugins/robots/drone/simulator/drone_flight_system_entity.cpp',
-    'src/plugins/robots/drone/simulator/drone_flight_system_default_actuator.cpp',
-    'src/plugins/robots/drone/simulator/drone_cameras_system_default_sensor.cpp',
-    'src/plugins/robots/drone/simulator/drone_system_default_sensor.cpp',
-    'src/plugins/robots/drone/simulator/pointmass3d_drone_model.cpp',
-    'src/plugins/robots/drone/simulator/drone_entity.cpp',
-  ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
-  link_with: [argos3core_simulator, argos3plugin_simulator_genericrobot, argos3plugin_simulator_entities, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_qtopengl])
-
 # argos3plugin_simulator_dynamics3d
-argos3plugin_simulator_dynamics3d = library('argos3plugin_simulator_dynamics3d', [
+argos3plugin_simulator_dynamics3d = shared_library('argos3plugin_simulator_dynamics3d', [
     'src/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.cpp',
     'src/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.cpp',
     'src/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btGearConstraint.cpp',
@@ -578,33 +424,204 @@ argos3plugin_simulator_dynamics3d = library('argos3plugin_simulator_dynamics3d',
     'src/plugins/simulator/physics_engines/dynamics3d/dynamics3d_multi_body_object_model.cpp',
     'src/plugins/simulator/physics_engines/dynamics3d/dynamics3d_single_body_object_model.cpp',
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
+  dependencies: argos_deps,
   link_with: [argos3core_simulator, argos3plugin_simulator_entities])
 
+# argos3plugin_simulator_spiri
+argos3plugin_simulator_spiri = shared_library('argos3plugin_simulator_spiri', [
+    'src/plugins/robots/spiri/simulator/pointmass3d_spiri_model.cpp',
+    'src/plugins/robots/spiri/simulator/spiri_entity.cpp',
+    'src/plugins/robots/spiri/simulator/qtopengl_spiri.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_genericrobot])
+
+# argos3plugin_simulator_eyebot
+argos3plugin_simulator_eyebot = shared_library('argos3plugin_simulator_eyebot', [
+    'src/plugins/robots/eye-bot/control_interface/ci_eyebot_proximity_sensor.cpp',
+    'src/plugins/robots/eye-bot/control_interface/ci_eyebot_light_sensor.cpp',
+    'src/plugins/robots/eye-bot/simulator/eyebot_light_rotzonly_sensor.cpp',
+    'src/plugins/robots/eye-bot/simulator/eyebot_entity.cpp',
+    'src/plugins/robots/eye-bot/simulator/qtopengl_eyebot.cpp',
+    'src/plugins/robots/eye-bot/simulator/eyebot_proximity_default_sensor.cpp',
+    'src/plugins/robots/eye-bot/simulator/pointmass3d_eyebot_model.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_genericrobot])
+
+# argos3plugin_simulator_pipuck
+argos3plugin_simulator_pipuck = shared_library('argos3plugin_simulator_pipuck', [
+    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_ground_sensor.cpp',
+    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_rangefinders_sensor.cpp',
+    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_front_camera_sensor.cpp',
+    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_system_sensor.cpp',
+    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_imu_sensor.cpp',
+    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_differential_drive_actuator.cpp',
+    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_differential_drive_sensor.cpp',
+    'src/plugins/robots/pi-puck/control_interface/ci_pipuck_leds_actuator.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_front_camera_default_sensor.cpp',
+    'src/plugins/robots/pi-puck/simulator/dynamics3d_pipuck_model.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_ground_default_sensor.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_system_default_sensor.cpp',
+    'src/plugins/robots/pi-puck/simulator/dynamics2d_pipuck_model.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_differential_drive_default_actuator.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_imu_default_sensor.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_differential_drive_entity.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_leds_default_actuator.cpp',
+    'src/plugins/robots/pi-puck/simulator/qtopengl_pipuck.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_entity.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_rangefinders_default_sensor.cpp',
+    'src/plugins/robots/pi-puck/simulator/pipuck_differential_drive_default_sensor.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
+
+# argos3plugin_simulator_block
+argos3plugin_simulator_block = shared_library('argos3plugin_simulator_block', [
+    'src/plugins/robots/block/simulator/block_entity.cpp',
+    'src/plugins/robots/block/simulator/qtopengl_block.cpp',
+    'src/plugins/robots/block/simulator/dynamics3d_block_model.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
+
+# argos3plugin_simulator_epuck
+argos3plugin_simulator_epuck = shared_library('argos3plugin_simulator_epuck', [
+    'src/plugins/robots/e-puck/control_interface/ci_epuck_proximity_sensor.cpp',
+    'src/plugins/robots/e-puck/simulator/dynamics2d_epuck_model.cpp',
+    'src/plugins/robots/e-puck/simulator/dynamics3d_epuck_model.cpp',
+    'src/plugins/robots/e-puck/simulator/qtopengl_epuck.cpp',
+    'src/plugins/robots/e-puck/simulator/epuck_entity.cpp',
+    'src/plugins/robots/e-puck/simulator/epuck_proximity_default_sensor.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_genericrobot])
+
+# argos3plugin_simulator_builderbot
+argos3plugin_simulator_builderbot = shared_library('argos3plugin_simulator_builderbot', [
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_leds_actuator.cpp',
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_lift_system_actuator.cpp',
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_differential_drive_sensor.cpp',
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_electromagnet_system_actuator.cpp',
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_lift_system_sensor.cpp',
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_rangefinders_sensor.cpp',
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_camera_system_sensor.cpp',
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_differential_drive_actuator.cpp',
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_system_sensor.cpp',
+    'src/plugins/robots/builderbot/control_interface/ci_builderbot_electromagnet_system_sensor.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_lift_system_default_actuator.cpp',
+    'src/plugins/robots/builderbot/simulator/qtopengl_builderbot.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_differential_drive_entity.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_electromagnet_system_entity.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_rangefinders_default_sensor.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_camera_system_default_sensor.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_electromagnet_system_default_actuator.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_lift_system_default_sensor.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_electromagnet_system_default_sensor.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_system_default_sensor.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_differential_drive_default_sensor.cpp',
+    'src/plugins/robots/builderbot/simulator/dynamics3d_builderbot_model.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_entity.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_differential_drive_default_actuator.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_leds_default_actuator.cpp',
+    'src/plugins/robots/builderbot/simulator/builderbot_lift_system_entity.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_entities, argos3plugin_simulator_genericrobot])
+
+# argos3plugin_simulator_prototype
+argos3plugin_simulator_prototype = shared_library('argos3plugin_simulator_prototype', [
+    'src/plugins/robots/prototype/control_interface/ci_prototype_joints_sensor.cpp',
+    'src/plugins/robots/prototype/control_interface/ci_prototype_joints_actuator.cpp',
+    'src/plugins/robots/prototype/simulator/prototype_joints_default_actuator.cpp',
+    'src/plugins/robots/prototype/simulator/prototype_joint_entity.cpp',
+    'src/plugins/robots/prototype/simulator/prototype_link_equipped_entity.cpp',
+    'src/plugins/robots/prototype/simulator/prototype_link_entity.cpp',
+    'src/plugins/robots/prototype/simulator/prototype_joints_default_sensor.cpp',
+    'src/plugins/robots/prototype/simulator/prototype_entity.cpp',
+    'src/plugins/robots/prototype/simulator/qtopengl_prototype.cpp',
+    'src/plugins/robots/prototype/simulator/prototype_joint_equipped_entity.cpp',
+    'src/plugins/robots/prototype/simulator/dynamics3d_prototype_model.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_genericrobot])
+
+# argos3plugin_simulator_footbot
+argos3plugin_simulator_footbot = shared_library('argos3plugin_simulator_footbot', [
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_motor_ground_sensor.cpp',
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_base_ground_sensor.cpp',
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_distance_scanner_sensor.cpp',
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_proximity_sensor.cpp',
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_light_sensor.cpp',
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_turret_encoder_sensor.cpp',
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_encoder_sensor.cpp',
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_distance_scanner_actuator.cpp',
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_gripper_actuator.cpp',
+    'src/plugins/robots/foot-bot/control_interface/ci_footbot_turret_actuator.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_distance_scanner_equipped_entity.cpp',
+    'src/plugins/robots/foot-bot/simulator/dynamics2d_footbot_model.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_gripper_default_actuator.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_turret_entity.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_turret_default_actuator.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_motor_ground_rotzonly_sensor.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_distance_scanner_rotzonly_sensor.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_light_rotzonly_sensor.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_proximity_default_sensor.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_entity.cpp',
+    'src/plugins/robots/foot-bot/simulator/qtopengl_footbot.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_base_ground_rotzonly_sensor.cpp',
+    'src/plugins/robots/foot-bot/simulator/pointmass3d_footbot_model.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_turret_encoder_default_sensor.cpp',
+    'src/plugins/robots/foot-bot/simulator/footbot_distance_scanner_default_actuator.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3plugin_simulator_qtopengl, argos3plugin_simulator_dynamics2d, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_genericrobot])
+
+# argos3plugin_simulator_drone
+argos3plugin_simulator_drone = shared_library('argos3plugin_simulator_drone', [
+    'src/plugins/robots/drone/control_interface/ci_drone_flight_system_actuator.cpp',
+    'src/plugins/robots/drone/control_interface/ci_drone_leds_actuator.cpp',
+    'src/plugins/robots/drone/control_interface/ci_drone_rangefinders_sensor.cpp',
+    'src/plugins/robots/drone/control_interface/ci_drone_system_sensor.cpp',
+    'src/plugins/robots/drone/control_interface/ci_drone_flight_system_sensor.cpp',
+    'src/plugins/robots/drone/control_interface/ci_drone_cameras_system_sensor.cpp',
+    'src/plugins/robots/drone/simulator/drone_flight_system_default_sensor.cpp',
+    'src/plugins/robots/drone/simulator/drone_leds_default_actuator.cpp',
+    'src/plugins/robots/drone/simulator/qtopengl_drone.cpp',
+    'src/plugins/robots/drone/simulator/drone_flight_system_entity.cpp',
+    'src/plugins/robots/drone/simulator/drone_flight_system_default_actuator.cpp',
+    'src/plugins/robots/drone/simulator/drone_cameras_system_default_sensor.cpp',
+    'src/plugins/robots/drone/simulator/drone_system_default_sensor.cpp',
+    'src/plugins/robots/drone/simulator/pointmass3d_drone_model.cpp',
+    'src/plugins/robots/drone/simulator/drone_entity.cpp',
+  ], include_directories: include,
+  dependencies: argos_deps,
+  link_with: [argos3core_simulator, argos3plugin_simulator_genericrobot, argos3plugin_simulator_entities, argos3plugin_simulator_pointmass3d, argos3plugin_simulator_qtopengl])
+
 # argos3plugin_simulator_dynamics3d_floor
-argos3plugin_simulator_dynamics3d_floor = library('argos3plugin_simulator_dynamics3d_floor', [
+argos3plugin_simulator_dynamics3d_floor = shared_library('argos3plugin_simulator_dynamics3d_floor', [
     'src/plugins/simulator/physics_engines/dynamics3d/dynamics3d_floor_plugin.cpp',
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
+  dependencies: argos_deps,
   link_with: [argos3core_simulator, argos3plugin_simulator_dynamics3d])
 
 # argos3plugin_simulator_dynamics3d_gravity
-argos3plugin_simulator_dynamics3d_gravity = library('argos3plugin_simulator_dynamics3d_gravity', [
+argos3plugin_simulator_dynamics3d_gravity = shared_library('argos3plugin_simulator_dynamics3d_gravity', [
     'src/plugins/simulator/physics_engines/dynamics3d/dynamics3d_gravity_plugin.cpp',
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
+  dependencies: argos_deps,
   link_with: [argos3core_simulator, argos3plugin_simulator_dynamics3d])
 
 # argos3plugin_simulator_dynamics3d_magnetism
-argos3plugin_simulator_dynamics3d_magnetism = library('argos3plugin_simulator_dynamics3d_magnetism', [
+argos3plugin_simulator_dynamics3d_magnetism = shared_library('argos3plugin_simulator_dynamics3d_magnetism', [
     'src/plugins/simulator/physics_engines/dynamics3d/dynamics3d_magnetism_plugin.cpp',
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
+  dependencies: argos_deps,
   link_with: [argos3core_simulator, argos3plugin_simulator_dynamics3d])
 
 # argos3plugin_simulator_dynamics3d_srocs
-argos3plugin_simulator_dynamics3d_srocs = library('argos3plugin_simulator_dynamics3d_srocs', [
+argos3plugin_simulator_dynamics3d_srocs = shared_library('argos3plugin_simulator_dynamics3d_srocs', [
     'src/plugins/simulator/physics_engines/dynamics3d/dynamics3d_srocs_plugin.cpp',
   ], include_directories: include,
-  dependencies: [lua, threads, opengl, glut, qt6, freeimage, dl],
+  dependencies: argos_deps,
   link_with: [argos3core_simulator, argos3plugin_simulator_dynamics3d, argos3plugin_simulator_builderbot, argos3plugin_simulator_block])

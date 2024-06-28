@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "tag_equipped_entity.h"
+#include <argos3/plugins/simulator/entities/tag_equipped_entity.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/space/space.h>
 #include <argos3/plugins/simulator/media/tag_medium.h>

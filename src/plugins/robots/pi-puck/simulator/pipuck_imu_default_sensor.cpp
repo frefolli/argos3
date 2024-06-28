@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "pipuck_imu_default_sensor.h"
+#include <argos3/plugins/robots/pi-puck/simulator/pipuck_imu_default_sensor.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/simulator/entity/composable_entity.h>

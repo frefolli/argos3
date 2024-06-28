@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
 
-#include "ci_gripper_actuator.h"
+#include <argos3/plugins/robots/generic/control_interface/ci_gripper_actuator.h>
 #include <argos3/core/utility/math/range.h>
 
 #ifdef ARGOS_WITH_LUA

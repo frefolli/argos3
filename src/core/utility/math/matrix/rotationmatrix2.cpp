@@ -6,7 +6,7 @@
  * @author Michael Allwright <allsey87@gmail.com>
  */
  
-#include "rotationmatrix2.h"
+#include <argos3/core/utility/math/matrix/rotationmatrix2.h>
 
 #include <argos3/core/utility/math/angles.h>
 

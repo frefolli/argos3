@@ -5,7 +5,7 @@
  * @author Weixu Zhu - <zhuweixu_harry@126.com>
  */
 
-#include "qtopengl_prototype.h"
+#include <argos3/plugins/robots/prototype/simulator/qtopengl_prototype.h>
 #include <argos3/core/utility/math/vector2.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 #include <argos3/plugins/robots/prototype/simulator/prototype_entity.h>

@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "footbot_entity.h"
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_entity.h>
 
 #include <argos3/core/utility/math/matrix/rotationmatrix3.h>
 #include <argos3/core/simulator/space/space.h>
@@ -19,8 +19,8 @@
 #include <argos3/plugins/simulator/entities/omnidirectional_camera_equipped_entity.h>
 #include <argos3/plugins/simulator/entities/perspective_camera_equipped_entity.h>
 #include <argos3/plugins/simulator/entities/proximity_sensor_equipped_entity.h>
-#include "footbot_distance_scanner_equipped_entity.h"
-#include "footbot_turret_entity.h"
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_distance_scanner_equipped_entity.h>
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_turret_entity.h>
 
 namespace argos {
 

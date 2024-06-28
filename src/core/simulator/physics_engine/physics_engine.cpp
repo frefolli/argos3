@@ -5,7 +5,7 @@
  */
 
 #include <cstdlib>
-#include "physics_engine.h"
+#include <argos3/core/simulator/physics_engine/physics_engine.h>
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/utility/math/vector3.h>
 #include <argos3/core/utility/string_utilities.h>

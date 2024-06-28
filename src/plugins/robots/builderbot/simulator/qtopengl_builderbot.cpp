@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "qtopengl_builderbot.h"
+#include <argos3/plugins/robots/builderbot/simulator/qtopengl_builderbot.h>
 
 #include <argos3/core/utility/datatypes/color.h>
 #include <argos3/core/utility/math/convex_hull.h>

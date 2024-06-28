@@ -10,7 +10,7 @@
 #include <argos3/core/simulator/entity/embodied_entity.h>
 #include <argos3/core/simulator/entity/floor_entity.h>
 
-#include "pipuck_ground_default_sensor.h"
+#include <argos3/plugins/robots/pi-puck/simulator/pipuck_ground_default_sensor.h>
 
 namespace argos {
 

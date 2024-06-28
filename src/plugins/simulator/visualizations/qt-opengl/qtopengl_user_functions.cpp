@@ -5,7 +5,7 @@
  * @author Giovanni Pini - <gpini@ulb.ac.be>
  */
 
-#include "qtopengl_user_functions.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_user_functions.h>
 #include <QPainter>
 
 namespace argos {

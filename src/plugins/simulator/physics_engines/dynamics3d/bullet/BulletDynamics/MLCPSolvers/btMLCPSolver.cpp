@@ -14,10 +14,10 @@ subject to the following restrictions:
 */
 ///original version written by Erwin Coumans, October 2013
 
-#include "btMLCPSolver.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/MLCPSolvers/btMLCPSolver.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMatrixX.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuickprof.h>
-#include "btSolveProjectedGaussSeidel.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/MLCPSolvers/btSolveProjectedGaussSeidel.h>
 
 btMLCPSolver::btMLCPSolver(btMLCPSolverInterface* solver)
 	: m_solver(solver),

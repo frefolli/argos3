@@ -1,4 +1,4 @@
-#include "loop_functions.h"
+#include <argos3/testing/builderbot/lift_actuator_lua/loop_functions.h>
 #include <argos3/plugins/robots/builderbot/simulator/builderbot_entity.h>
 #include <argos3/plugins/robots/block/simulator/block_entity.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>

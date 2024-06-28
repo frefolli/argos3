@@ -1,5 +1,5 @@
-#include "btPolarDecomposition.h"
-#include "btMinMax.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btPolarDecomposition.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMinMax.h>
 
 namespace
 {

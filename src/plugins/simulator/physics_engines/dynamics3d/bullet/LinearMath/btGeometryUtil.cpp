@@ -12,7 +12,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btGeometryUtil.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btGeometryUtil.h>
 
 /*
   Make sure this dummy function never changes so that it

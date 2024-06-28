@@ -13,6 +13,6 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btBroadphaseProxy.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h>
 
 BT_NOT_EMPTY_FILE  // fix warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library

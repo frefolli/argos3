@@ -9,7 +9,7 @@
 #include <argos3/core/simulator/entity/composable_entity.h>
 #include <argos3/plugins/simulator/entities/proximity_sensor_equipped_entity.h>
 
-#include "epuck_proximity_default_sensor.h"
+#include <argos3/plugins/robots/e-puck/simulator/epuck_proximity_default_sensor.h>
 
 namespace argos {
 

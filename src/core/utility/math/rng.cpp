@@ -6,7 +6,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "rng.h"
+#include <argos3/core/utility/math/rng.h>
 #include <argos3/core/utility/configuration/argos_exception.h>
 #include <argos3/core/utility/logging/argos_log.h>
 #include <cstring>

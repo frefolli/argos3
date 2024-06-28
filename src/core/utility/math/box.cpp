@@ -1,5 +1,5 @@
-#include "box.h"
-#include "ray3.h"
+#include <argos3/core/utility/math/box.h>
+#include <argos3/core/utility/math/ray3.h>
 
 namespace argos {
 

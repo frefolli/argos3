@@ -4,8 +4,8 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "qtopengl_epuck.h"
-#include "epuck_entity.h"
+#include <argos3/plugins/robots/e-puck/simulator/qtopengl_epuck.h>
+#include <argos3/plugins/robots/e-puck/simulator/epuck_entity.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 #include <argos3/core/utility/math/vector2.h>
 #include <argos3/core/utility/math/vector3.h>

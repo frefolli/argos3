@@ -10,7 +10,7 @@
 #include <argos3/core/simulator/entity/floor_entity.h>
 #include <argos3/plugins/simulator/entities/ground_sensor_equipped_entity.h>
 
-#include "footbot_motor_ground_rotzonly_sensor.h"
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_motor_ground_rotzonly_sensor.h>
 
 namespace argos {
 

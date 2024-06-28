@@ -1,4 +1,4 @@
-#include "loop_functions.h"
+#include <argos3/testing/prototype/radios/loop_functions.h>
 #include <argos3/plugins/robots/prototype/simulator/prototype_entity.h>
 #include <argos3/plugins/robots/generic/control_interface/ci_simple_radios_sensor.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>

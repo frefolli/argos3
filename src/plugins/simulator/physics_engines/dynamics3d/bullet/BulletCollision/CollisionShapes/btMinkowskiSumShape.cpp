@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btMinkowskiSumShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btMinkowskiSumShape.h>
 
 btMinkowskiSumShape::btMinkowskiSumShape(const btConvexShape* shapeA, const btConvexShape* shapeB)
 	: btConvexInternalShape(),

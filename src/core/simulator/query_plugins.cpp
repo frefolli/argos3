@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "query_plugins.h"
+#include <argos3/core/simulator/query_plugins.h>
 #include <argos3/core/simulator/visualization/visualization.h>
 #include <argos3/core/simulator/physics_engine/physics_engine.h>
 #include <argos3/core/simulator/entity/entity.h>

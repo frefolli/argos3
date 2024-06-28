@@ -4,7 +4,7 @@
  *
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
-#include "light_sensor_equipped_entity.h"
+#include <argos3/plugins/simulator/entities/light_sensor_equipped_entity.h>
 #include <argos3/core/simulator/space/space.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 

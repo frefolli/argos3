@@ -24,7 +24,7 @@ GJK-EPA collision solver by Nathanael Presson, 2008
 */
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexInternalShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btSphereShape.h>
-#include "btGjkEpa2.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btGjkEpa2.h>
 
 #if defined(DEBUG) || defined(_DEBUG)
 #include <stdio.h>  //for debug printf

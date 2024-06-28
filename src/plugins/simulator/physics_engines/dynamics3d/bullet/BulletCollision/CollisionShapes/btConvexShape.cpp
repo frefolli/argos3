@@ -17,14 +17,14 @@ subject to the following restrictions:
 #define BT_USE_SSE_IN_API
 #endif
 
-#include "btConvexShape.h"
-#include "btTriangleShape.h"
-#include "btSphereShape.h"
-#include "btCylinderShape.h"
-#include "btConeShape.h"
-#include "btCapsuleShape.h"
-#include "btConvexHullShape.h"
-#include "btConvexPointCloudShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexShape.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btTriangleShape.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btSphereShape.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btCylinderShape.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConeShape.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btCapsuleShape.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexHullShape.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexPointCloudShape.h>
 
 ///not supported on IBM SDK, until we fix the alignment of btVector3
 #if defined(__CELLOS_LV2__) && defined(__SPU__)

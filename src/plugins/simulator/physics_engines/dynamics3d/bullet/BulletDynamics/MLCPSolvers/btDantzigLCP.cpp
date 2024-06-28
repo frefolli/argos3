@@ -108,7 +108,7 @@ rows/columns and manipulate C.
 
 */
 
-#include "btDantzigLCP.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/MLCPSolvers/btDantzigLCP.h>
 
 #include <string.h>  //memcpy
 

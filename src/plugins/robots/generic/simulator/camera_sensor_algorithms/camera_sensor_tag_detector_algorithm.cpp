@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "camera_sensor_tag_detector_algorithm.h"
+#include <argos3/plugins/robots/generic/simulator/camera_sensor_algorithms/camera_sensor_tag_detector_algorithm.h>
 
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/utility/math/matrix/squarematrix.h>

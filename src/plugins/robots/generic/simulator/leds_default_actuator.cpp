@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "leds_default_actuator.h"
+#include <argos3/plugins/robots/generic/simulator/leds_default_actuator.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/plugins/simulator/media/led_medium.h>

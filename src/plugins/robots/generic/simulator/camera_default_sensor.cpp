@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "camera_default_sensor.h"
+#include <argos3/plugins/robots/generic/simulator/camera_default_sensor.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 #include <argos3/plugins/robots/generic/simulator/camera_sensor_algorithm.h>

@@ -37,7 +37,7 @@ email: projectileman@yahoo.com
 http://gimpact.sf.net
 */
 
-#include "btGeneric6DofSpring2Constraint.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpring2Constraint.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Dynamics/btRigidBody.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btTransformUtil.h>
 #include <cmath>

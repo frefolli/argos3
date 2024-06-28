@@ -3,7 +3,7 @@
  *
  * @author Adhavan Jayabalan <jadhu94@gmail.com>
  */
-#include "battery_equipped_entity.h"
+#include <argos3/plugins/simulator/entities/battery_equipped_entity.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/space/space.h>
 #include <argos3/core/simulator/entity/composable_entity.h>

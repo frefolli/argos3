@@ -3,7 +3,7 @@
  * @author Michael Allwright <mallwright@learnrobotics.io>
  */
 
-#include "controller.h"
+#include <argos3/testing/drone/fly_pointmass3d/controller.h>
 
 #include <argos3/plugins/robots/drone/control_interface/ci_drone_flight_system_actuator.h>
 #include <argos3/plugins/robots/drone/control_interface/ci_drone_flight_system_sensor.h>

@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "vector2.h"
+#include <argos3/core/utility/math/vector2.h>
 
 namespace argos {
 

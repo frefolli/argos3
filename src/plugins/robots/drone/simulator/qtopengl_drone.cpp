@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "qtopengl_drone.h"
+#include <argos3/plugins/robots/drone/simulator/qtopengl_drone.h>
 
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/utility/datatypes/color.h>

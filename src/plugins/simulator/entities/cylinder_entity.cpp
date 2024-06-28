@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "cylinder_entity.h"
+#include <argos3/plugins/simulator/entities/cylinder_entity.h>
 #include <argos3/core/utility/math/matrix/rotationmatrix3.h>
 #include <argos3/core/simulator/space/space.h>
 #include <argos3/core/simulator/simulator.h>

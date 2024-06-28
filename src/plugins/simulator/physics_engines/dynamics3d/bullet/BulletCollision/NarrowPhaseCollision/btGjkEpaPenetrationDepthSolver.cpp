@@ -16,7 +16,7 @@ subject to the following restrictions:
 */
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexShape.h>
-#include "btGjkEpaPenetrationDepthSolver.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h>
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btGjkEpa2.h>
 

@@ -4,9 +4,9 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "qtopengl_widget.h"
-#include "qtopengl_main_window.h"
-#include "qtopengl_user_functions.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_widget.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_main_window.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_user_functions.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/utility/math/plane.h>

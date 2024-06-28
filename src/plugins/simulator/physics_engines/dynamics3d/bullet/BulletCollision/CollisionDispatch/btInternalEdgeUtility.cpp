@@ -1,4 +1,4 @@
-#include "btInternalEdgeUtility.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btInternalEdgeUtility.h>
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h>

@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionWorld.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btDefaultMotionState.h>
-#include "btKinematicCharacterController.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Character/btKinematicCharacterController.h>
 
 // static helper method
 static btVector3

@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "rotor_equipped_entity.h"
+#include <argos3/plugins/simulator/entities/rotor_equipped_entity.h>
 #include <argos3/core/simulator/space/space.h>
 
 namespace argos {

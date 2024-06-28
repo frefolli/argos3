@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
 
-#include "qtopengl_lua_statetree_item.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_statetree_item.h>
 #include <cstdio>
 
 namespace argos {

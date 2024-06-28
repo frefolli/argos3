@@ -4,7 +4,7 @@
  * @author Michael Allwright <allsey87@gmail.com>
  */
 
-#include "lua_vector2.h"
+#include <argos3/core/wrappers/lua/lua_vector2.h>
 
 #include <argos3/core/utility/math/vector2.h>
 #include <argos3/core/utility/math/angles.h>

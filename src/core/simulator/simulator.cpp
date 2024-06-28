@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "simulator.h"
+#include <argos3/core/simulator/simulator.h>
 
 #include <iostream>
 #include <memory>

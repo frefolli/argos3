@@ -5,7 +5,7 @@
  * @author Sinan Oguz - <soguz.ankara@gmail.com>
  */
 
-#include "ci_drone_flight_system_actuator.h"
+#include <argos3/plugins/robots/drone/control_interface/ci_drone_flight_system_actuator.h>
 
 #ifdef ARGOS_WITH_LUA
 #include <argos3/core/wrappers/lua/lua_utility.h>

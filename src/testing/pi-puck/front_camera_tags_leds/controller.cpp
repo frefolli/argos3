@@ -3,7 +3,7 @@
  * @author Michael Allwright <mallwright@learnrobotics.io>
  */
 
-#include "controller.h"
+#include <argos3/testing/pi-puck/front_camera_tags_leds/controller.h>
 
 #include <argos3/plugins/robots/pi-puck/control_interface/ci_pipuck_front_camera_sensor.h>
 

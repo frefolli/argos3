@@ -6,7 +6,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "color.h"
+#include <argos3/core/utility/datatypes/color.h>
 
 namespace argos {
 

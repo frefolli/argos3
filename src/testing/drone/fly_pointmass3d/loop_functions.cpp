@@ -1,4 +1,4 @@
-#include "loop_functions.h"
+#include <argos3/testing/drone/fly_pointmass3d/loop_functions.h>
 #include <argos3/plugins/robots/drone/simulator/drone_entity.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 

@@ -19,7 +19,7 @@ subject to the following restrictions:
 //Math library was replaced from fmatvec to a the file src/LinearMath/btMatrixX.h
 //STL/std::vector replaced by btAlignedObjectArray
 
-#include "btLemkeAlgorithm.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/MLCPSolvers/btLemkeAlgorithm.h>
 
 #undef BT_DEBUG_OSTREAM
 #ifdef BT_DEBUG_OSTREAM

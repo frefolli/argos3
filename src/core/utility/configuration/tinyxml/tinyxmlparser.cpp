@@ -25,7 +25,7 @@ distribution.
 #include <ctype.h>
 #include <stddef.h>
 
-#include "tinyxml.h"
+#include <argos3/core/utility/configuration/tinyxml/tinyxml.h>
 
 //#define DEBUG_PARSER
 #if defined( DEBUG_PARSER )

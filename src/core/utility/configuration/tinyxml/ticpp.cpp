@@ -20,9 +20,9 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "ticpp.h"
-#include "ticpprc.h"
-#include "tinyxml.h"
+#include <argos3/core/utility/configuration/tinyxml/ticpp.h>
+#include <argos3/core/utility/configuration/tinyxml/ticpprc.h>
+#include <argos3/core/utility/configuration/tinyxml/tinyxml.h>
 #include <sstream>
 
 using namespace ticpp;

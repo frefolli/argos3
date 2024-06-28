@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "magnets_default_actuator.h"
+#include <argos3/plugins/robots/generic/simulator/magnets_default_actuator.h>
 #include <argos3/plugins/simulator/entities/magnet_equipped_entity.h>
 
 namespace argos {

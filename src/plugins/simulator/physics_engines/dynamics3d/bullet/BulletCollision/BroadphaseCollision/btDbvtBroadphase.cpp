@@ -15,7 +15,7 @@ subject to the following restrictions:
 
 ///btDbvtBroadphase implementation by Nathanael Presson
 
-#include "btDbvtBroadphase.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btThreads.h>
 btScalar gDbvtMargin = btScalar(0.05);
 //

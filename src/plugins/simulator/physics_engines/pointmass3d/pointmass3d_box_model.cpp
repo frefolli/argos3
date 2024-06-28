@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <cpinciro@ulb.ac.be>
  */
 
-#include "pointmass3d_box_model.h"
+#include <argos3/plugins/simulator/physics_engines/pointmass3d/pointmass3d_box_model.h>
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/utility/math/box.h>
 #include <argos3/core/simulator/simulator.h>

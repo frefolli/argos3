@@ -12,8 +12,8 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btThreads.h"
-#include "btQuickprof.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btThreads.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuickprof.h>
 #include <algorithm>  // for min and max
 
 #if BT_USE_OPENMP && BT_THREADSAFE

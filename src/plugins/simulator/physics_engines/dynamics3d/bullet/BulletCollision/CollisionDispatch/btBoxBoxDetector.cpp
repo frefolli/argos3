@@ -18,7 +18,7 @@ subject to the following restrictions:
 
 ///ODE box-box collision detection is adapted to work with Bullet
 
-#include "btBoxBoxDetector.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btBoxBoxDetector.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btBoxShape.h>
 
 #include <float.h>

@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "footbot_turret_entity.h"
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_turret_entity.h>
 #include <argos3/core/utility/math/angles.h>
 #include <argos3/core/simulator/physics_engine/physics_engine.h>
 #include <argos3/core/simulator/space/space.h>

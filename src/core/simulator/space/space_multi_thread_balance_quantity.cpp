@@ -8,7 +8,7 @@
 #include <cstring>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/utility/profiler/profiler.h>
-#include "space_multi_thread_balance_quantity.h"
+#include <argos3/core/simulator/space/space_multi_thread_balance_quantity.h>
 
 namespace argos {
 

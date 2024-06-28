@@ -5,7 +5,7 @@
 //  Created by Xuchen Han on 4/4/20.
 //
 #include <stdio.h>
-#include "btReducedVector.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btReducedVector.h>
 #include <cmath>
 
 // returns the projection of this onto other

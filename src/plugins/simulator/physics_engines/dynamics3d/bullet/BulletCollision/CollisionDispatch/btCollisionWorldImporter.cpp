@@ -13,8 +13,8 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btCollisionWorldImporter.h"
-#include "btBulletCollisionCommon.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionWorldImporter.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/btBulletCollisionCommon.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btSerializer.h>  //for btBulletSerializedArrays definition
 
 #ifdef SUPPORT_GIMPACT_SHAPE_IMPORT

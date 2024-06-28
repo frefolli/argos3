@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "tags_default_actuator.h"
+#include <argos3/plugins/robots/generic/simulator/tags_default_actuator.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/plugins/simulator/media/tag_medium.h>
 

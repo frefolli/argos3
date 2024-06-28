@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "argos_log.h"
+#include <argos3/core/utility/logging/argos_log.h>
 
 namespace argos {
 

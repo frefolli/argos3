@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "prototype_joints_default_actuator.h"
+#include <argos3/plugins/robots/prototype/simulator/prototype_joints_default_actuator.h>
 
 namespace argos {
 

@@ -4,7 +4,7 @@
  * @author Michael Allwright <allsey87@gmail.com>
  */
 
-#include "lua_quaternion.h"
+#include <argos3/core/wrappers/lua/lua_quaternion.h>
 
 #include <argos3/core/utility/math/angles.h>
 #include <argos3/core/utility/math/vector3.h>

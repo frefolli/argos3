@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btTriangleMesh.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btTriangleMesh.h>
 
 btTriangleMesh::btTriangleMesh(bool use32bitIndices, bool use4componentVertices)
 	: m_use32bitIndices(use32bitIndices),

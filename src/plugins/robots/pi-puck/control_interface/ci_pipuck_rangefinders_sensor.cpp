@@ -4,7 +4,7 @@
  * @author Michael Allwright <allsey87@gmail.com>
  */
 
-#include "ci_pipuck_rangefinders_sensor.h"
+#include <argos3/plugins/robots/pi-puck/control_interface/ci_pipuck_rangefinders_sensor.h>
 
 #ifdef ARGOS_WITH_LUA
 #include <argos3/core/wrappers/lua/lua_utility.h>

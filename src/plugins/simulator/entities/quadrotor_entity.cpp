@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "quadrotor_entity.h"
+#include <argos3/plugins/simulator/entities/quadrotor_entity.h>
 #include <argos3/core/simulator/space/space.h>
 
 namespace argos {

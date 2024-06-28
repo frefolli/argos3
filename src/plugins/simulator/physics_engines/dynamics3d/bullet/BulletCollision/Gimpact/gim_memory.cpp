@@ -27,8 +27,8 @@ email: projectileman@yahoo.com
 -----------------------------------------------------------------------------
 */
 
-#include "gim_memory.h"
-#include "stdlib.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/gim_memory.h>
+#include <stdlib.h>
 
 #ifdef GIM_SIMD_MEMORY
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAlignedAllocator.h>

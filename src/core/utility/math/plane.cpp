@@ -1,5 +1,5 @@
-#include "plane.h"
-#include "ray3.h"
+#include <argos3/core/utility/math/plane.h>
+#include <argos3/core/utility/math/ray3.h>
 
 namespace argos {
 

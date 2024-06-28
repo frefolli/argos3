@@ -10,7 +10,7 @@
 #include <argos3/plugins/simulator/entities/light_entity.h>
 #include <argos3/plugins/simulator/entities/light_sensor_equipped_entity.h>
 
-#include "eyebot_light_rotzonly_sensor.h"
+#include <argos3/plugins/robots/eye-bot/simulator/eyebot_light_rotzonly_sensor.h>
 
 namespace argos {
 

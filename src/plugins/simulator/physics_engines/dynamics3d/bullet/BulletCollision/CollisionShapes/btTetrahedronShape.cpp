@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btTetrahedronShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btTetrahedronShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMatrix3x3.h>
 
 btBU_Simplex1to4::btBU_Simplex1to4() : btPolyhedralConvexAabbCachingShape(),

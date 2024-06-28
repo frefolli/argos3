@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
 
-#include "angles.h"
+#include <argos3/core/utility/math/angles.h>
 
 namespace argos {
 

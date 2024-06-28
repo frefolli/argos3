@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "builderbot_differential_drive_entity.h"
+#include <argos3/plugins/robots/builderbot/simulator/builderbot_differential_drive_entity.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/simulator/space/space.h>

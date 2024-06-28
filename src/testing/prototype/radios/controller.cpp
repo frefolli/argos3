@@ -3,7 +3,7 @@
  * @author Michael Allwright <mallwright@learnrobotics.io>
  */
 
-#include "controller.h"
+#include <argos3/testing/prototype/radios/controller.h>
 
 #include <argos3/plugins/robots/generic/control_interface/ci_simple_radios_actuator.h>
 

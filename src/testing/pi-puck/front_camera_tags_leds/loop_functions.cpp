@@ -1,4 +1,4 @@
-#include "loop_functions.h"
+#include <argos3/testing/pi-puck/front_camera_tags_leds/loop_functions.h>
 #include <argos3/plugins/robots/pi-puck/simulator/pipuck_entity.h>
 #include <argos3/plugins/robots/pi-puck/control_interface/ci_pipuck_front_camera_sensor.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>

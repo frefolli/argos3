@@ -1,4 +1,4 @@
-#include "loop_functions.h"
+#include <argos3/testing/pi-puck/drive_forward_dynamics2d/loop_functions.h>
 #include <argos3/plugins/robots/pi-puck/simulator/pipuck_entity.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 

@@ -16,7 +16,7 @@ subject to the following restrictions:
 ///btBox2dBox2dCollisionAlgorithm, with modified b2CollidePolygons routines from the Box2D library.
 ///The modifications include: switching from b2Vec to btVector3, redefinition of b2Dot, b2Cross
 
-#include "btBox2dBox2dCollisionAlgorithm.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionDispatcher.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btBoxShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h>

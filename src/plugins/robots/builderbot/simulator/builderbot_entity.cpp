@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "builderbot_entity.h"
+#include <argos3/plugins/robots/builderbot/simulator/builderbot_entity.h>
 
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/entity/controllable_entity.h>

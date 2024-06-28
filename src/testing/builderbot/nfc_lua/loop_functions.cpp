@@ -1,4 +1,4 @@
-#include "loop_functions.h"
+#include <argos3/testing/builderbot/nfc_lua/loop_functions.h>
 #include <argos3/plugins/robots/builderbot/simulator/builderbot_entity.h>
 #include <argos3/plugins/robots/block/simulator/block_entity.h>
 #include <argos3/plugins/robots/generic/control_interface/ci_simple_radios_sensor.h>

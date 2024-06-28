@@ -15,10 +15,10 @@ subject to the following restrictions:
 
 #include <string.h>
 
-#include "btConvexHull.h"
-#include "btAlignedObjectArray.h"
-#include "btMinMax.h"
-#include "btVector3.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btConvexHull.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAlignedObjectArray.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMinMax.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btVector3.h>
 
 //----------------------------------
 

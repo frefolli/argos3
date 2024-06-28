@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "magnet_equipped_entity.h"
+#include <argos3/plugins/simulator/entities/magnet_equipped_entity.h>
 
 namespace argos {
 

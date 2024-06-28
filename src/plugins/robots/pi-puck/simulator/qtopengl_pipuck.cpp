@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "qtopengl_pipuck.h"
+#include <argos3/plugins/robots/pi-puck/simulator/qtopengl_pipuck.h>
 
 #include <argos3/core/utility/datatypes/color.h>
 #include <argos3/core/utility/math/vector2.h>

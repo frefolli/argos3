@@ -4,8 +4,8 @@
  *
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
-#include "ray3.h"
-#include "plane.h"
+#include <argos3/core/utility/math/ray3.h>
+#include <argos3/core/utility/math/plane.h>
 
 namespace argos {
 

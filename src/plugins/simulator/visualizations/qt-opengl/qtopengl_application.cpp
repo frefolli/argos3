@@ -4,7 +4,7 @@
  *
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
-#include "qtopengl_application.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_application.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 

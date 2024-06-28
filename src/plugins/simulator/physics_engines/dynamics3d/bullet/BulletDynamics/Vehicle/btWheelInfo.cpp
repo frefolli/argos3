@@ -8,7 +8,7 @@
  * of this software for any purpose.  
  * It is provided "as is" without express or implied warranty.
 */
-#include "btWheelInfo.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Vehicle/btWheelInfo.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Dynamics/btRigidBody.h>  // for pointvelocity
 
 btScalar btWheelInfo::getSuspensionRestLength() const

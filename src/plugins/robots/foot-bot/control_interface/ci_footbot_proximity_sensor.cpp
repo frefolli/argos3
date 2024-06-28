@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
 
-#include "ci_footbot_proximity_sensor.h"
+#include <argos3/plugins/robots/foot-bot/control_interface/ci_footbot_proximity_sensor.h>
 #include <argos3/core/utility/math/angles.h>
 
 #ifdef ARGOS_WITH_LUA

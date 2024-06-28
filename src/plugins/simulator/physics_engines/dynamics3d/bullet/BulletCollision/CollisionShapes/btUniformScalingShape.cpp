@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btUniformScalingShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btUniformScalingShape.h>
 
 btUniformScalingShape::btUniformScalingShape(btConvexShape* convexChildShape, btScalar uniformScalingFactor) : btConvexShape(), m_childConvexShape(convexChildShape), m_uniformScalingFactor(uniformScalingFactor)
 {

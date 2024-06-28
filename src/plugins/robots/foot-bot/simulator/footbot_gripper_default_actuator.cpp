@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "footbot_gripper_default_actuator.h"
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_gripper_default_actuator.h>
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 

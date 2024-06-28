@@ -3,7 +3,7 @@
  * @author Michael Allwright <mallwright@learnrobotics.io>
  */
 
-#include "controller.h"
+#include <argos3/testing/foot-bot/drive_forward_dynamics2d/controller.h>
 
 #include <argos3/plugins/robots/generic/control_interface/ci_differential_steering_actuator.h>
 

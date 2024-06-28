@@ -4,7 +4,7 @@
  * @author Weixu Zhu <zhuweixu_harry@126.com>
  */
 
-#include "convex_hull.h"
+#include <argos3/core/utility/math/convex_hull.h>
 
 #include <algorithm>
 

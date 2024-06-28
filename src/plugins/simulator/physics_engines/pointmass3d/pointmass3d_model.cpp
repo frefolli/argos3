@@ -1,4 +1,4 @@
-#include "pointmass3d_model.h"
+#include <argos3/plugins/simulator/physics_engines/pointmass3d/pointmass3d_model.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 
 namespace argos {

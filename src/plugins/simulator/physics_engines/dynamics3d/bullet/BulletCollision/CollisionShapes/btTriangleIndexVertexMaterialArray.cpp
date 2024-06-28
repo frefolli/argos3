@@ -15,7 +15,7 @@ subject to the following restrictions:
 
 ///This file was created by Alex Silverman
 
-#include "btTriangleIndexVertexMaterialArray.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.h>
 
 btTriangleIndexVertexMaterialArray::btTriangleIndexVertexMaterialArray(int numTriangles, int* triangleIndexBase, int triangleIndexStride,
 																	   int numVertices, btScalar* vertexBase, int vertexStride,

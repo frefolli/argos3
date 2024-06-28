@@ -1,4 +1,4 @@
-#include "signal_processing.h"
+#include <argos3/core/utility/signal_processing.h>
 
 namespace argos {
 

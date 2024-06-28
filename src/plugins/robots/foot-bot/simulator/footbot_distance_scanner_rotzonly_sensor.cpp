@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "footbot_distance_scanner_rotzonly_sensor.h"
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_distance_scanner_rotzonly_sensor.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 #include <argos3/core/simulator/entity/controllable_entity.h>
 #include <argos3/core/simulator/simulator.h>

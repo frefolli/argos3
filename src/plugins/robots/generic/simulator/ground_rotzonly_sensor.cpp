@@ -10,7 +10,7 @@
 #include <argos3/core/simulator/entity/floor_entity.h>
 #include <argos3/plugins/simulator/entities/ground_sensor_equipped_entity.h>
 
-#include "ground_rotzonly_sensor.h"
+#include <argos3/plugins/robots/generic/simulator/ground_rotzonly_sensor.h>
 
 namespace argos {
 

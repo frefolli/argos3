@@ -30,7 +30,7 @@
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
 
-#include "ci_footbot_base_ground_sensor.h"
+#include <argos3/plugins/robots/foot-bot/control_interface/ci_footbot_base_ground_sensor.h>
 
 #ifdef ARGOS_WITH_LUA
 #include <argos3/core/wrappers/lua/lua_utility.h>

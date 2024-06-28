@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "pointmass3d_footbot_model.h"
+#include <argos3/plugins/robots/foot-bot/simulator/pointmass3d_footbot_model.h>
 #include <argos3/core/utility/math/cylinder.h>
 
 namespace argos {

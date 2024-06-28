@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <cpinciro@ulb.ac.be>
  */
 
-#include "pointmass3d_eyebot_model.h"
+#include <argos3/plugins/robots/eye-bot/simulator/pointmass3d_eyebot_model.h>
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/utility/math/cylinder.h>
 #include <argos3/core/simulator/simulator.h>
