@@ -57,7 +57,7 @@ function _build_rpm_package() {
 function _build_arch_package() {
   DIR=$PWD
   cd ${TARGETDIR}/arch/
-  makepkg --sign -f
+  makepkg --sign -f --nodeps
   cd $DIR
 }
 
