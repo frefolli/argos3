@@ -36,5 +36,8 @@ install:
 	mkdir -p ${DESTDIR}/usr/share/pkgconfig
 	cp -r argos3.pc ${DESTDIR}/usr/share/pkgconfig
 
+	mkdir -p ${DESTDIR}/etc/ld.so.conf.d
+	cp argos3.conf ${DESTDIR}/etc/ld.so.conf.d
+
 docs:
 	make -C ./doc
