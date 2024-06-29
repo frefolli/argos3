@@ -24,7 +24,7 @@ project('argos3_simulator', ['c', 'cpp'],
 #                configuration : conf_data)
 
 # Dependecies
-lua = dependency('lua5.4')
+lua = dependency('lua')
 threads = dependency('threads')
 opengl = dependency('opengl')
 glut = dependency('glut')
