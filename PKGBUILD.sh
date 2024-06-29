@@ -15,7 +15,7 @@ echo "pkgdesc='${PKGNAME} - A fast, parallel, multi-physics, and multi-robot sim
 echo "license=('MIT')"
 echo "arch=('${ARCH}')"
 echo "makedepends=()"
-echo "depends=('freeglut>=2.6.0' 'freeimage>=3.15' gcc-libs glibc glu libglvnd libxi libxmu lua qt6-base)"
+echo "depends=('freeglut>=2.8.0' 'freeimage>=3.15' gcc-libs glibc glu libglvnd libxi libxmu lua qt6-base meson)"
 echo "url='https://github.com/frefolli/argos3'"
 echo "source=("${PACKAGE}.tar.gz")"
 echo "sha256sums=('${SHA256}')"

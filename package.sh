@@ -5,6 +5,7 @@ VERSION=3.0.1
 PKGREL=1
 ARCH=x86_64
 TARGETDIR=target
+DISTDIR=distdir
 
 function _build() {
   make
@@ -18,13 +19,22 @@ function _setup_targetdir() {
   fi
 }
 
+function _setup_distdir() {
+  if [ ! -d ${DISTDIR} ]; then
+    mkdir -p ${DISTDIR}
+    echo "*" > ${DISTDIR}/.gitignore
+  fi
+}
+
 function _setup_rpm_buildtree() {
   _setup_targetdir
+  _setup_distdir
   mkdir -p ${TARGETDIR}/rpm/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
 }
 
 function _setup_arch_buildtree() {
   _setup_targetdir
+  _setup_distdir
   mkdir -p ${TARGETDIR}/arch
 }
 
@@ -67,6 +77,7 @@ function _sign_rpm_package() {
 }
 
 function _package_rpm() {
+  DISTRO=$1
   _setup_rpm_buildtree
   PACKAGE=${TARGETDIR}/rpm/SOURCES/${PKGNAME}-${VERSION}
   RPM=${TARGETDIR}/rpm/RPMS/${ARCH}/${PKGNAME}-${VERSION}-${PKGREL}.${ARCH}.rpm
@@ -74,26 +85,33 @@ function _package_rpm() {
   _reset ${PACKAGE}
   make install DESTDIR=${PACKAGE}
   _compress ${PACKAGE}
-  ./${PKGNAME}.spec.sh ${PACKAGE} ${PKGNAME} ${VERSION} ${PKGREL} ${ARCH} > ${TARGETDIR}/rpm/SPECS/${PKGNAME}.spec
+  ./${PKGNAME}.${DISTRO}.spec.sh ${PACKAGE} ${PKGNAME} ${VERSION} ${PKGREL} ${ARCH} > ${TARGETDIR}/rpm/SPECS/${PKGNAME}.spec
   _build_rpm_package ${PKGNAME}.spec
   _sign_rpm_package ${RPM}
+  mv ${RPM} ${DISTDIR}/${PKGNAME}-${VERSION}-${PKGREL}.${ARCH}.${DISTRO}.rpm
 }
 
 function _package_arch() {
   _setup_arch_buildtree
   PACKAGE=${TARGETDIR}/arch/${PKGNAME}-${VERSION}
+  PKG_TAR_GZ=${TARGETDIR}/arch/${PKGNAME}-${VERSION}-${PKGREL}-${ARCH}.pkg.tar.gz
   _reset ${PACKAGE}
   make install DESTDIR=${PACKAGE}
   _compress ${PACKAGE}
   ./PKGBUILD.sh ${PACKAGE} ${PKGNAME} ${VERSION} ${PKGREL} ${ARCH} > ${TARGETDIR}/arch/PKGBUILD
   _build_arch_package
+  mv ${PKG_TAR_GZ} ${DISTDIR}
+  mv ${PKG_TAR_GZ}.sig ${DISTDIR}
 }
 
 function _package() {
   TYPE=$1
   case $TYPE in
-    RPM | rpm)
-      _package_rpm
+    OpenSUSE | opensuse)
+      _package_rpm opensuse
+      ;;
+    Fedora | fedora)
+      _package_rpm fedora
       ;;
     Arch | arch)
       _package_arch
