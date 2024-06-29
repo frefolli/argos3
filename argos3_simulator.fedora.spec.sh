@@ -5,7 +5,6 @@ VERSION=$3
 PKGREL=$4
 ARCH=$5
 
-echo "AutoReq:        no"
 echo "Name:           ${PKGNAME}"
 echo "Version:        ${VERSION}"
 echo "Release:        ${PKGREL}%{?dist}"
