@@ -94,14 +94,14 @@ function _package_rpm() {
 function _package_arch() {
   _setup_arch_buildtree
   PACKAGE=${TARGETDIR}/arch/${PKGNAME}-${VERSION}
-  PKG_TAR_GZ=${TARGETDIR}/arch/${PKGNAME}-${VERSION}-${PKGREL}-${ARCH}.pkg.tar.gz
+  PKG=${TARGETDIR}/arch/${PKGNAME}-${VERSION}-${PKGREL}-${ARCH}.pkg.tar.zst
   _reset ${PACKAGE}
   make install DESTDIR=${PACKAGE}
   _compress ${PACKAGE}
   ./PKGBUILD.sh ${PACKAGE} ${PKGNAME} ${VERSION} ${PKGREL} ${ARCH} > ${TARGETDIR}/arch/PKGBUILD
   _build_arch_package
-  mv ${PKG_TAR_GZ} ${DISTDIR}
-  mv ${PKG_TAR_GZ}.sig ${DISTDIR}
+  mv ${PKG} ${DISTDIR}
+  mv ${PKG}.sig ${DISTDIR}
 }
 
 function _package() {
