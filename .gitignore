@@ -9,7 +9,6 @@ CMakeFiles/
 CPackConfig.cmake
 CPackSourceConfig.cmake
 argos.SlackBuild
-argos3.conf
 cmake_install.cmake
 doinst.sh
 slack-desc
