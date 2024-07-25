@@ -17,7 +17,7 @@ subject to the following restrictions:
 ///Separating axis rest based on work from Pierre Terdiman, see
 ///And contact clipping based on work from Simon Hobbs
 
-#include "btPolyhedralContactClipping.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexPolyhedron.h>
 
 #include <float.h>  //for FLT_MAX

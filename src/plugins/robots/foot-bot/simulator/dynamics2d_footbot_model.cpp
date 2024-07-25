@@ -4,8 +4,8 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "dynamics2d_footbot_model.h"
-#include "footbot_turret_entity.h"
+#include <argos3/plugins/robots/foot-bot/simulator/dynamics2d_footbot_model.h>
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_turret_entity.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics2d/dynamics2d_gripping.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics2d/dynamics2d_engine.h>
 

@@ -23,8 +23,8 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "chipmunk_private.h"
-#include "chipmunk_unsafe.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/chipmunk_private.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/chipmunk_unsafe.h>
 
 #define CP_DefineShapeGetter(struct, type, member, name) \
 CP_DeclareShapeGetter(struct, type, name){ \

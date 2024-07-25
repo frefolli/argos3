@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btRigidBody.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Dynamics/btRigidBody.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMinMax.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btTransformUtil.h>

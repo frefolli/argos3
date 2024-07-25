@@ -1,4 +1,4 @@
-#include "rate.h"
+#include <argos3/core/utility/rate.h>
 #include <argos3/core/utility/logging/argos_log.h>
 
 using namespace argos;

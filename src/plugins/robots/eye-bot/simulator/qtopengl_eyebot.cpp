@@ -4,8 +4,8 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "qtopengl_eyebot.h"
-#include "eyebot_entity.h"
+#include <argos3/plugins/robots/eye-bot/simulator/qtopengl_eyebot.h>
+#include <argos3/plugins/robots/eye-bot/simulator/eyebot_entity.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 #include <argos3/core/utility/math/vector2.h>
 #include <argos3/core/utility/math/vector3.h>

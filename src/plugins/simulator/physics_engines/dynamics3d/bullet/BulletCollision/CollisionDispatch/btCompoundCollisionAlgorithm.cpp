@@ -20,7 +20,7 @@ subject to the following restrictions:
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btDbvt.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btIDebugDraw.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAabbUtil2.h>
-#include "btManifoldResult.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btManifoldResult.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionObjectWrapper.h>
 
 btShapePairCallback gCompoundChildShapePairCallback = 0;

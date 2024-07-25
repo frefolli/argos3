@@ -1,4 +1,4 @@
-#include "led_medium.h"
+#include <argos3/plugins/simulator/media/led_medium.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/space/space.h>
 #include <argos3/core/simulator/space/positional_indices/grid.h>

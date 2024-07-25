@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "ci_camera_sensor_led_detector_algorithm.h"
+#include <argos3/plugins/robots/generic/control_interface/ci_camera_sensor_algorithms/ci_camera_sensor_led_detector_algorithm.h>
 
 #ifdef ARGOS_WITH_LUA
 #include <argos3/core/wrappers/lua/lua_utility.h>

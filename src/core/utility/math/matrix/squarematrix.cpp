@@ -6,7 +6,7 @@
  * @author Michael Allwright <allsey87@gmail.com>
  */
 
-#include "squarematrix.h"
+#include <argos3/core/utility/math/matrix/squarematrix.h>
 
 namespace argos {
 

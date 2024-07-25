@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "drone_flight_system_default_actuator.h"
+#include <argos3/plugins/robots/drone/simulator/drone_flight_system_default_actuator.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 

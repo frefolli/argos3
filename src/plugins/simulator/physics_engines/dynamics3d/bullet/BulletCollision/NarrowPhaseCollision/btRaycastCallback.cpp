@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btGjkConvexCast.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h>
-#include "btRaycastCallback.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btRaycastCallback.h>
 
 btTriangleRaycastCallback::btTriangleRaycastCallback(const btVector3& from, const btVector3& to, unsigned int flags)
 	: m_from(from),

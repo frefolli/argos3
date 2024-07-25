@@ -27,8 +27,8 @@ Concave-Concave Collision
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btIDebugDraw.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btBoxShape.h>
-#include "btGImpactCollisionAlgorithm.h"
-#include "btContactProcessing.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/btGImpactCollisionAlgorithm.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/btContactProcessing.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuickprof.h>
 
 //! Class for accessing the plane equation

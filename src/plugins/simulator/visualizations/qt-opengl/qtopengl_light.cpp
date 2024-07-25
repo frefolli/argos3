@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "qtopengl_light.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_light.h>
 #include <argos3/core/utility/math/vector3.h>
 #include <argos3/plugins/simulator/entities/light_entity.h>
 #include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_widget.h>

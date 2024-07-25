@@ -17,7 +17,7 @@ subject to the following restrictions:
 ///Separating axis rest based on work from Pierre Terdiman, see
 ///And contact clipping based on work from Simon Hobbs
 
-#include "btConvexPolyhedron.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexPolyhedron.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btHashMap.h>
 
 btConvexPolyhedron::btConvexPolyhedron()

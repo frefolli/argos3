@@ -1,4 +1,4 @@
-#include "omnidirectional_camera_equipped_entity.h"
+#include <argos3/plugins/simulator/entities/omnidirectional_camera_equipped_entity.h>
 #include <argos3/core/simulator/space/space.h>
 
 namespace argos {

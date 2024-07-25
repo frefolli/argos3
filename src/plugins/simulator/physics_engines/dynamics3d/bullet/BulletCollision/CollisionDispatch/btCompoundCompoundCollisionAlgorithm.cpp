@@ -14,7 +14,7 @@ subject to the following restrictions:
 
 */
 
-#include "btCompoundCompoundCollisionAlgorithm.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCompoundCompoundCollisionAlgorithm.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuickprof.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btCompoundShape.h>

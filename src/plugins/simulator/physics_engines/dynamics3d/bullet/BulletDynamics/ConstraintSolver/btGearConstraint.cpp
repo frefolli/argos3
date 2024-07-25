@@ -15,7 +15,7 @@ subject to the following restrictions:
 
 /// Implemented by Erwin Coumans. The idea for the constraint comes from Dimitris Papavasiliou.
 
-#include "btGearConstraint.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btGearConstraint.h>
 
 btGearConstraint::btGearConstraint(btRigidBody& rbA, btRigidBody& rbB, const btVector3& axisInA, const btVector3& axisInB, btScalar ratio)
 	: btTypedConstraint(GEAR_CONSTRAINT_TYPE, rbA, rbB),

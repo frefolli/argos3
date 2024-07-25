@@ -13,14 +13,14 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btContinuousConvexCollision.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btTransformUtil.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btSphereShape.h>
 
-#include "btGjkPairDetector.h"
-#include "btPointCollector.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btPointCollector.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btStaticPlaneShape.h>
 
 btContinuousConvexCollision::btContinuousConvexCollision(const btConvexShape* convexA, const btConvexShape* convexB, btSimplexSolverInterface* simplexSolver, btConvexPenetrationDepthSolver* penetrationDepthSolver)

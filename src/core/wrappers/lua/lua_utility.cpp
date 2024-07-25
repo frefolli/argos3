@@ -4,7 +4,7 @@
  *
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
-#include "lua_utility.h"
+#include <argos3/core/wrappers/lua/lua_utility.h>
 
 #include <argos3/core/utility/configuration/argos_exception.h>
 #include <argos3/core/utility/math/angles.h>

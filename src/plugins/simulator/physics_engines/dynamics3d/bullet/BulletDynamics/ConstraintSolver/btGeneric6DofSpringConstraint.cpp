@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btGeneric6DofSpringConstraint.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Dynamics/btRigidBody.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btTransformUtil.h>
 

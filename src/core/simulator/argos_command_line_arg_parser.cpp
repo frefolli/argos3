@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "argos_command_line_arg_parser.h"
+#include <argos3/core/simulator/argos_command_line_arg_parser.h>
 #include <argos3/core/config.h>
 
 namespace argos {

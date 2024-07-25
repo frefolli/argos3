@@ -5,7 +5,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "dynamics3d_srocs_plugin.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/dynamics3d_srocs_plugin.h>
 
 #include <argos3/plugins/robots/block/simulator/dynamics3d_block_model.h>
 #include <argos3/plugins/robots/builderbot/simulator/dynamics3d_builderbot_model.h>

@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "footbot_turret_default_actuator.h"
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_turret_default_actuator.h>
 
 namespace argos {
 

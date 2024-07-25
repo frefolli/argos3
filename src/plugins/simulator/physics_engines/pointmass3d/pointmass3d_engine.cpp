@@ -4,8 +4,8 @@
  * @author Carlo Pinciroli - <cpinciro@ulb.ac.be>
  */
 
-#include "pointmass3d_engine.h"
-#include "pointmass3d_model.h"
+#include <argos3/plugins/simulator/physics_engines/pointmass3d/pointmass3d_engine.h>
+#include <argos3/plugins/simulator/physics_engines/pointmass3d/pointmass3d_model.h>
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/utility/configuration/argos_configuration.h>
 

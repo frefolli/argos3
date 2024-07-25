@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "loop_functions.h"
+#include <argos3/core/simulator/loop_functions.h>
 #include <argos3/core/utility/plugins/factory.h>
 #include <argos3/core/simulator/entity/positional_entity.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>

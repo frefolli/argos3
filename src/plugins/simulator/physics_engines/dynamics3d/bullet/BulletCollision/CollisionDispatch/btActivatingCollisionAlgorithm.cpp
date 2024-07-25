@@ -13,9 +13,9 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btActivatingCollisionAlgorithm.h"
-#include "btCollisionDispatcher.h"
-#include "btCollisionObject.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionDispatcher.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h>
 
 btActivatingCollisionAlgorithm::btActivatingCollisionAlgorithm(const btCollisionAlgorithmConstructionInfo& ci)
 	: btCollisionAlgorithm(ci)

@@ -13,10 +13,10 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btOverlappingPairCache.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h>
 
-#include "btDispatcher.h"
-#include "btCollisionAlgorithm.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btDispatcher.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAabbUtil2.h>
 
 #include <stdio.h>

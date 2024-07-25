@@ -18,8 +18,8 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btGImpactShape.h"
-#include "btGImpactMassUtil.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/btGImpactShape.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/btGImpactMassUtil.h>
 
 btGImpactMeshShapePart::btGImpactMeshShapePart(btStridingMeshInterface* meshInterface, int part)
 {

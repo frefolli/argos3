@@ -21,7 +21,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btGImpactQuantizedBvh.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/btGImpactQuantizedBvh.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuickprof.h>
 
 #ifdef TRI_COLLISION_PROFILING

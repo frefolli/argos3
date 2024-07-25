@@ -1,4 +1,4 @@
-#include "btMiniSDF.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btMiniSDF.h>
 
 //
 //Based on code from DiscreGrid, https://github.com/InteractiveComputerGraphics/Discregrid

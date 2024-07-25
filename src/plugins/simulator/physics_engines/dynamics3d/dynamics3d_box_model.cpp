@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "dynamics3d_box_model.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/dynamics3d_box_model.h>
 
 #include <argos3/plugins/simulator/entities/box_entity.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/dynamics3d_engine.h>

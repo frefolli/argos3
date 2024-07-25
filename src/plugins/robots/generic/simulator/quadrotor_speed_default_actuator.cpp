@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "quadrotor_speed_default_actuator.h"
+#include <argos3/plugins/robots/generic/simulator/quadrotor_speed_default_actuator.h>
 #include <argos3/core/utility/logging/argos_log.h>
 
 namespace argos {

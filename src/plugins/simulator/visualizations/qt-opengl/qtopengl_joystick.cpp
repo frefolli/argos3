@@ -7,7 +7,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "qtopengl_joystick.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_joystick.h>
 #include <argos3/core/utility/configuration/argos_exception.h>
 #include <argos3/core/utility/logging/argos_log.h>
 

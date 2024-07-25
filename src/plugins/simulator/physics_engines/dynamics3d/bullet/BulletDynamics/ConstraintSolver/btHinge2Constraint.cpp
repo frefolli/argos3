@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btHinge2Constraint.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Dynamics/btRigidBody.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btTransformUtil.h>
 

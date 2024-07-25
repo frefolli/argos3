@@ -8,7 +8,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "space_no_threads.h"
+#include <argos3/core/simulator/space/space_no_threads.h>
 #include <argos3/core/simulator/simulator.h>
 
 namespace argos {

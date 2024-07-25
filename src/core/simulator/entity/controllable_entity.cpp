@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "controllable_entity.h"
+#include <argos3/core/simulator/entity/controllable_entity.h>
 #include <argos3/core/simulator/actuator.h>
 #include <argos3/core/simulator/sensor.h>
 #include <argos3/core/simulator/simulator.h>

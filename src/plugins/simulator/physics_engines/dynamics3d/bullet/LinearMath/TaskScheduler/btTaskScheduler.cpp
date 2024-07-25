@@ -8,7 +8,7 @@
 
 #if BT_THREADSAFE
 
-#include "btThreadSupportInterface.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/TaskScheduler/btThreadSupportInterface.h>
 
 #if defined(_WIN32)
 

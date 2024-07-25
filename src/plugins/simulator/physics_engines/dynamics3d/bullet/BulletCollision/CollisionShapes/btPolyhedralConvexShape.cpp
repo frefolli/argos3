@@ -17,7 +17,7 @@ subject to the following restrictions:
 #endif
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h>
-#include "btConvexPolyhedron.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexPolyhedron.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btConvexHullComputer.h>
 #include <new>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btGeometryUtil.h>

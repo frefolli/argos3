@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "dynamics3d_model.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/dynamics3d_model.h>
 
 #include <argos3/core/simulator/physics_engine/physics_model.h>
 #include <argos3/core/simulator/entity/composable_entity.h>

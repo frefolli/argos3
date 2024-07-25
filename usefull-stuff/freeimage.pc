@@ -1,0 +1,8 @@
+prefix=/usr
+exec_prefix=${prefix}
+
+Name: FreeImage
+Description: FreeImage is a library for developers who would like to support graphics image formats like PNG, BMP, JPEG, TIFF and others as needed by today's multimedia applications.
+Requires:
+Version: 3.18.0
+Libs: -lfreeimageplus  -lfreeimage

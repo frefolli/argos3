@@ -28,7 +28,7 @@ email: projectileman@yahoo.com
 -----------------------------------------------------------------------------
 */
 
-#include "gim_box_set.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/gim_box_set.h>
 
 GUINT GIM_BOX_TREE::_calc_splitting_axis(
 	gim_array<GIM_AABB_DATA>& primitive_boxes, GUINT startIndex, GUINT endIndex)

@@ -1,4 +1,4 @@
-#include "tcp_socket.h"
+#include <argos3/core/utility/networking/tcp_socket.h>
 
 #include <argos3/core/utility/string_utilities.h>
 

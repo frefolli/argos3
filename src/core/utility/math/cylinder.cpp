@@ -1,5 +1,5 @@
-#include "cylinder.h"
-#include "ray3.h"
+#include <argos3/core/utility/math/cylinder.h>
+#include <argos3/core/utility/math/ray3.h>
 
 namespace argos {
 

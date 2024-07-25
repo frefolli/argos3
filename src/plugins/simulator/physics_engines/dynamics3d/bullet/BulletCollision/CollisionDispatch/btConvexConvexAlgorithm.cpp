@@ -19,7 +19,7 @@ subject to the following restrictions:
 //#define BT_DISABLE_CAPSULE_CAPSULE_COLLIDER 1
 //#define ZERO_MARGIN
 
-#include "btConvexConvexAlgorithm.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h>
 
 //#include <stdio.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h>

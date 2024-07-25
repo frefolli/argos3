@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "led_equipped_entity.h"
+#include <argos3/plugins/simulator/entities/led_equipped_entity.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/space/space.h>
 #include <argos3/plugins/simulator/media/led_medium.h>

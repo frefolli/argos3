@@ -16,7 +16,7 @@
 // 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 //
 // 3. This notice may not be removed or altered from any source distribution.
-#include "btAxisSweep3.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h>
 
 btAxisSweep3::btAxisSweep3(const btVector3& worldAabbMin, const btVector3& worldAabbMax, unsigned short int maxHandles, btOverlappingPairCache* pairCache, bool disableRaycastAccelerator)
 	: btAxisSweep3Internal<unsigned short int>(worldAabbMin, worldAabbMax, 0xfffe, 0xffff, maxHandles, pairCache, disableRaycastAccelerator)

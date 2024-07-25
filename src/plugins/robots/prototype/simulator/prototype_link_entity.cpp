@@ -5,7 +5,7 @@
  * @author Weixu Zhu - <zhuweixu_harry@126.com>
  */
 
-#include "prototype_link_entity.h"
+#include <argos3/plugins/robots/prototype/simulator/prototype_link_entity.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 #include <argos3/plugins/robots/prototype/simulator/prototype_entity.h>
 

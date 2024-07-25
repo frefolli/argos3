@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btQuantizedBvh.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btQuantizedBvh.h>
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAabbUtil2.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btIDebugDraw.h>

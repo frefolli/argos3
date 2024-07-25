@@ -14,7 +14,7 @@ subject to the following restrictions:
 */
 ///btDbvt implementation by Nathanael Presson
 
-#include "btDbvt.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btDbvt.h>
 
 //
 typedef btAlignedObjectArray<btDbvtNode*> tNodeArray;

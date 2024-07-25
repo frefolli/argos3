@@ -15,7 +15,7 @@ subject to the following restrictions:
 
 //btShapeHull was implemented by John McCutchan.
 
-#include "btShapeHull.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btShapeHull.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btConvexHull.h>
 
 #define NUM_UNITSPHERE_POINTS 42

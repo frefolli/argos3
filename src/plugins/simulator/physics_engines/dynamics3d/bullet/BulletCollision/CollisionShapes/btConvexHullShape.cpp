@@ -17,12 +17,12 @@ subject to the following restrictions:
 #define BT_USE_SSE_IN_API
 #endif
 
-#include "btConvexHullShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexHullShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btCollisionMargin.h>
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuaternion.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btSerializer.h>
-#include "btConvexPolyhedron.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvexPolyhedron.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btConvexHullComputer.h>
 
 btConvexHullShape ::btConvexHullShape(const btScalar* points, int numPoints, int stride) : btPolyhedralConvexAabbCachingShape()

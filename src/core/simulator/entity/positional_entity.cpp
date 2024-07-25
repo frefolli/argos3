@@ -4,8 +4,8 @@
  *
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
-#include "positional_entity.h"
-#include "composable_entity.h"
+#include <argos3/core/simulator/entity/positional_entity.h>
+#include <argos3/core/simulator/entity/composable_entity.h>
 #include <argos3/core/simulator/space/space.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/utility/string_utilities.h>

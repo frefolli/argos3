@@ -4,10 +4,10 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "qtopengl_footbot.h"
-#include "footbot_entity.h"
-#include "footbot_distance_scanner_equipped_entity.h"
-#include "footbot_turret_entity.h"
+#include <argos3/plugins/robots/foot-bot/simulator/qtopengl_footbot.h>
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_entity.h>
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_distance_scanner_equipped_entity.h>
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_turret_entity.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 #include <argos3/core/utility/math/vector2.h>
 #include <argos3/core/utility/math/vector3.h>

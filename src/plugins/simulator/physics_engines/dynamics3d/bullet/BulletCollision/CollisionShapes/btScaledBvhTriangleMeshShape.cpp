@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btScaledBvhTriangleMeshShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h>
 
 btScaledBvhTriangleMeshShape::btScaledBvhTriangleMeshShape(btBvhTriangleMeshShape* childShape, const btVector3& localScaling)
 	: m_localScaling(localScaling), m_bvhTriMeshShape(childShape)

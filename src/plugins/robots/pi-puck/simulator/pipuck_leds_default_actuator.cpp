@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "pipuck_leds_default_actuator.h"
+#include <argos3/plugins/robots/pi-puck/simulator/pipuck_leds_default_actuator.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 

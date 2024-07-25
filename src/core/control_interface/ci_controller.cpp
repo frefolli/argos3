@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "ci_controller.h"
+#include <argos3/core/control_interface/ci_controller.h>
 
 namespace argos {
 

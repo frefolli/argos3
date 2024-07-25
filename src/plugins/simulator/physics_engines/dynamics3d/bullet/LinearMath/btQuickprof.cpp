@@ -13,8 +13,8 @@
 // Credits: The Clock class was inspired by the Timer classes in
 // Ogre (www.ogre3d.org).
 
-#include "btQuickprof.h"
-#include "btThreads.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuickprof.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btThreads.h>
 
 #ifdef __CELLOS_LV2__
 #include <sys/sys_time.h>

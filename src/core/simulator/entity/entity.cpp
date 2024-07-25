@@ -5,8 +5,8 @@
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
 
-#include "entity.h"
-#include "composable_entity.h"
+#include <argos3/core/simulator/entity/entity.h>
+#include <argos3/core/simulator/entity/composable_entity.h>
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/simulator/space/space.h>
 

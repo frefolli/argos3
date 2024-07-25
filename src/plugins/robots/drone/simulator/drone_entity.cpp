@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "drone_entity.h"
+#include <argos3/plugins/robots/drone/simulator/drone_entity.h>
 
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/entity/controllable_entity.h>

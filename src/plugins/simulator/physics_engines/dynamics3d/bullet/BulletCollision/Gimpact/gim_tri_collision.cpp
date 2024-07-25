@@ -31,7 +31,7 @@ email: projectileman@yahoo.com
 -----------------------------------------------------------------------------
 */
 
-#include "gim_tri_collision.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/gim_tri_collision.h>
 
 #define TRI_LOCAL_EPSILON 0.000001f
 #define MIN_EDGE_EDGE_DIS 0.00001f

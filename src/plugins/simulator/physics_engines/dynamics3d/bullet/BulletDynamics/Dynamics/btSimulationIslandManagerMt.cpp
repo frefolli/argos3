@@ -15,7 +15,7 @@ subject to the following restrictions:
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btScalar.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btThreads.h>
-#include "btSimulationIslandManagerMt.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Dynamics/btSimulationIslandManagerMt.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/BroadphaseCollision/btDispatcher.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h>

@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btAlignedAllocator.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAlignedAllocator.h>
 
 #ifdef BT_DEBUG_MEMORY_ALLOCATIONS
 int gNumAlignedAllocs = 0;

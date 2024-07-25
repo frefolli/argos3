@@ -6,7 +6,7 @@
  * @author Weixu Zhu - <zhuweixu_harry@126.com>
  */
 
-#include "dynamics3d_magnetism_plugin.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/dynamics3d_magnetism_plugin.h>
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/dynamics3d_model.h>
 

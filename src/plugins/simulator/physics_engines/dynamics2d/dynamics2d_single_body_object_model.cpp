@@ -1,4 +1,4 @@
-#include "dynamics2d_single_body_object_model.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/dynamics2d_single_body_object_model.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 
 namespace argos {

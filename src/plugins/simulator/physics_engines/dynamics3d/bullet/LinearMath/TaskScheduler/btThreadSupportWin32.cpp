@@ -19,7 +19,7 @@ subject to the following restrictions:
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMinMax.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAlignedObjectArray.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btThreads.h>
-#include "btThreadSupportInterface.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/TaskScheduler/btThreadSupportInterface.h>
 #include <windows.h>
 #include <stdio.h>
 

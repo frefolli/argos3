@@ -1,4 +1,4 @@
-#include "physics_model.h"
+#include <argos3/core/simulator/physics_engine/physics_model.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 

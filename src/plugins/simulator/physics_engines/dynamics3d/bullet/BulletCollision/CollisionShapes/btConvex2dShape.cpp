@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btConvex2dShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConvex2dShape.h>
 
 btConvex2dShape::btConvex2dShape(btConvexShape* convexChildShape) : btConvexShape(), m_childConvexShape(convexChildShape)
 {

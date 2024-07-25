@@ -1,4 +1,4 @@
-#include "colored_blob_omnidirectional_camera_rotzonly_sensor.h"
+#include <argos3/plugins/robots/generic/simulator/colored_blob_omnidirectional_camera_rotzonly_sensor.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/space/positional_indices/positional_index.h>
 #include <argos3/core/simulator/entity/composable_entity.h>

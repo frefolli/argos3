@@ -13,11 +13,11 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btContactConstraint.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btContactConstraint.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Dynamics/btRigidBody.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btVector3.h>
-#include "btJacobianEntry.h"
-#include "btContactSolverInfo.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMinMax.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h>
 
@@ -48,11 +48,11 @@ void btContactConstraint::buildJacobian()
 {
 }
 
-#include "btContactConstraint.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btContactConstraint.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Dynamics/btRigidBody.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btVector3.h>
-#include "btJacobianEntry.h"
-#include "btContactSolverInfo.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMinMax.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h>
 

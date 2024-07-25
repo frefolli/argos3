@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "qtopengl_camera.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_camera.h>
 #include <QPoint>
 #include <argos3/core/utility/math/quaternion.h>
 #include <argos3/core/utility/logging/argos_log.h>

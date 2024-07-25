@@ -13,10 +13,10 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btTriangleMeshShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btTriangleMeshShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btVector3.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuaternion.h>
-#include "btStridingMeshInterface.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAabbUtil2.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btCollisionMargin.h>
 

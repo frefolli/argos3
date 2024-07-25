@@ -22,7 +22,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "chipmunk_private.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/chipmunk-physics/include/chipmunk_private.h>
 
 cpFloat
 cpvlength(const cpVect v)

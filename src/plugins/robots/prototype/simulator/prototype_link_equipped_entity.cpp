@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "prototype_link_equipped_entity.h"
+#include <argos3/plugins/robots/prototype/simulator/prototype_link_equipped_entity.h>
 
 namespace argos {
 

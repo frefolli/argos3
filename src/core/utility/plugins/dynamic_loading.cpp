@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "dynamic_loading.h"
+#include <argos3/core/utility/plugins/dynamic_loading.h>
 
 #include <dirent.h>
 #include <cerrno>

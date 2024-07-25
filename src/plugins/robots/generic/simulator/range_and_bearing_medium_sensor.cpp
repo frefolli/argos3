@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "range_and_bearing_medium_sensor.h"
+#include <argos3/plugins/robots/generic/simulator/range_and_bearing_medium_sensor.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 #include <argos3/core/simulator/entity/controllable_entity.h>

@@ -14,10 +14,10 @@ subject to the following restrictions:
 
 #include <string.h>
 
-#include "btConvexHullComputer.h"
-#include "btAlignedObjectArray.h"
-#include "btMinMax.h"
-#include "btVector3.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btConvexHullComputer.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAlignedObjectArray.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMinMax.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btVector3.h>
 
 #ifdef __GNUC__
 #include <stdint.h>

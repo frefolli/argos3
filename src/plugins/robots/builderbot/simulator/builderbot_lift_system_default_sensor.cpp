@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "builderbot_lift_system_default_sensor.h"
+#include <argos3/plugins/robots/builderbot/simulator/builderbot_lift_system_default_sensor.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 

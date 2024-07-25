@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "dynamics3d_floor_plugin.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/dynamics3d_floor_plugin.h>
 
 namespace argos {
    

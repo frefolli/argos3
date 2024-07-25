@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "pipuck_front_camera_default_sensor.h"
+#include <argos3/plugins/robots/pi-puck/simulator/pipuck_front_camera_default_sensor.h>
 
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/entity/composable_entity.h>

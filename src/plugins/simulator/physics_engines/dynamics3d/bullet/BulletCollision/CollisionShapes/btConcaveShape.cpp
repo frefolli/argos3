@@ -13,7 +13,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btConcaveShape.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btConcaveShape.h>
 
 btConcaveShape::btConcaveShape() : m_collisionMargin(btScalar(0.))
 {

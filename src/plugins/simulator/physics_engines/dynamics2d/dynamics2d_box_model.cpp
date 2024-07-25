@@ -4,9 +4,9 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "dynamics2d_box_model.h"
-#include "dynamics2d_gripping.h"
-#include "dynamics2d_engine.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/dynamics2d_box_model.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/dynamics2d_gripping.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics2d/dynamics2d_engine.h>
 
 namespace argos {
 

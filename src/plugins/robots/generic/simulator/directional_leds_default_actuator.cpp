@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "directional_leds_default_actuator.h"
+#include <argos3/plugins/robots/generic/simulator/directional_leds_default_actuator.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/plugins/simulator/media/directional_led_medium.h>
 

@@ -6,7 +6,7 @@
  *
  */
 
-#include "qtopengl_obj_model.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_obj_model.h>
 
 #include <argos3/core/simulator/visualization/visualization.h>
 #include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_render.h>

@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "rab_equipped_entity.h"
+#include <argos3/plugins/simulator/entities/rab_equipped_entity.h>
 #include <argos3/core/utility/string_utilities.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/space/space.h>

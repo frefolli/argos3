@@ -4,10 +4,10 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "qtopengl_widget.h"
-#include "qtopengl_log_stream.h"
-#include "qtopengl_user_functions.h"
-#include "qtopengl_main_window.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_widget.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_log_stream.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_user_functions.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_main_window.h>
 
 #include <argos3/core/config.h>
 #include <argos3/core/utility/plugins/dynamic_loading.h>

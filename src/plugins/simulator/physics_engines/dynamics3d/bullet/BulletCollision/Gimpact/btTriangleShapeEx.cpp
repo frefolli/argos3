@@ -21,7 +21,7 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "btTriangleShapeEx.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/btTriangleShapeEx.h>
 
 void GIM_TRIANGLE_CONTACT::merge_points(const btVector4& plane,
 										btScalar margin, const btVector3* points, int point_count)

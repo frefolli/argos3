@@ -1,4 +1,4 @@
-#include "perspective_camera_equipped_entity.h"
+#include <argos3/plugins/simulator/entities/perspective_camera_equipped_entity.h>
 #include <argos3/core/simulator/space/space.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 

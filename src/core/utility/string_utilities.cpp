@@ -7,7 +7,7 @@
  * @author Vito Trianni - <vito.trianni@istc.cnr.it>
  */
 
-#include "string_utilities.h"
+#include <argos3/core/utility/string_utilities.h>
 #include <cstdlib>
 #include <regex.h>
 

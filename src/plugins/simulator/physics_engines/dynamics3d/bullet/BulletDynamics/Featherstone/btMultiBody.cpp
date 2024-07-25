@@ -21,10 +21,10 @@
  
  */
 
-#include "btMultiBody.h"
-#include "btMultiBodyLink.h"
-#include "btMultiBodyLinkCollider.h"
-#include "btMultiBodyJointFeedback.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Featherstone/btMultiBody.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Featherstone/btMultiBodyLink.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Featherstone/btMultiBodyLinkCollider.h>
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/Featherstone/btMultiBodyJointFeedback.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btTransformUtil.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btSerializer.h>
 //#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/Bullet3Common/b3Logging.h>

@@ -1,4 +1,4 @@
-#include "rab_medium.h"
+#include <argos3/plugins/simulator/media/rab_medium.h>
 #include <argos3/core/simulator/entity/embodied_entity.h>
 #include <argos3/core/simulator/simulator.h>
 #include <argos3/core/simulator/space/space.h>

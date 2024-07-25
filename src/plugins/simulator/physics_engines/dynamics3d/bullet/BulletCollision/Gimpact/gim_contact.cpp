@@ -28,7 +28,7 @@ email: projectileman@yahoo.com
 -----------------------------------------------------------------------------
 */
 
-#include "gim_contact.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/Gimpact/gim_contact.h>
 
 #define MAX_COINCIDENT 8
 

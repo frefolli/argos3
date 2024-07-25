@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "footbot_turret_encoder_default_sensor.h"
+#include <argos3/plugins/robots/foot-bot/simulator/footbot_turret_encoder_default_sensor.h>
 #include <argos3/core/simulator/entity/composable_entity.h>
 
 namespace argos {

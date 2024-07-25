@@ -14,7 +14,7 @@ subject to the following restrictions:
 */
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btScalar.h>
-#include "SphereTriangleDetector.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionDispatch/SphereTriangleDetector.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btTriangleShape.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/CollisionShapes/btSphereShape.h>
 

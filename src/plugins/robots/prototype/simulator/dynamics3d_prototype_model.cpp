@@ -5,7 +5,7 @@
  * @author Weixu Zhu- <zhuweixu_harry@126.com>
  */
 
-#include "dynamics3d_prototype_model.h"
+#include <argos3/plugins/robots/prototype/simulator/dynamics3d_prototype_model.h>
 #include <argos3/plugins/robots/prototype/simulator/prototype_entity.h>
 #include <argos3/plugins/robots/prototype/simulator/prototype_joint_equipped_entity.h>
 #include <argos3/plugins/robots/prototype/simulator/prototype_link_equipped_entity.h>

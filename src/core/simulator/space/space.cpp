@@ -17,7 +17,7 @@
 #include <argos3/core/simulator/entity/positional_entity.h>
 #include <argos3/core/simulator/loop_functions.h>
 #include <cstring>
-#include "space.h"
+#include <argos3/core/simulator/space/space.h>
 
 namespace argos {
 

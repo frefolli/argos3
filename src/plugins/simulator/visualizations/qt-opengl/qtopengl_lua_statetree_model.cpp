@@ -4,8 +4,8 @@
  *
  * @author Carlo Pinciroli <ilpincy@gmail.com>
  */
-#include "qtopengl_lua_statetree_model.h"
-#include "qtopengl_lua_statetree_item.h"
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_statetree_model.h>
+#include <argos3/plugins/simulator/visualizations/qt-opengl/qtopengl_lua_statetree_item.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/wrappers/lua/lua_utility.h>

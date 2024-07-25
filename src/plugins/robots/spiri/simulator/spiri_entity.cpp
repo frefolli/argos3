@@ -4,7 +4,7 @@
  * @author Carlo Pinciroli - <ilpincy@gmail.com>
  */
 
-#include "spiri_entity.h"
+#include <argos3/plugins/robots/spiri/simulator/spiri_entity.h>
 
 #include <argos3/core/simulator/space/space.h>
 #include <argos3/core/simulator/entity/controllable_entity.h>

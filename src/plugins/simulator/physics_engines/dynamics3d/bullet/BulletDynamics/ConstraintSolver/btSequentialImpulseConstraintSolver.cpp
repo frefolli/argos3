@@ -20,20 +20,20 @@ subject to the following restrictions:
 
 //It is not necessary (redundant) to refresh contact manifolds, this refresh has been moved to the collision algorithms.
 
-#include "btSequentialImpulseConstraintSolver.h"
+#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h>
 
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btIDebugDraw.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btCpuFeatureUtility.h>
 
-//#include "btJacobianEntry.h"
+//#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btMinMax.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h>
 #include <new>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btStackAlloc.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btQuickprof.h>
-//#include "btSolverBody.h"
-//#include "btSolverConstraint.h"
+//#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h>
+//#include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h>
 #include <argos3/plugins/simulator/physics_engines/dynamics3d/bullet/LinearMath/btAlignedObjectArray.h>
 #include <string.h>  //for memset
 

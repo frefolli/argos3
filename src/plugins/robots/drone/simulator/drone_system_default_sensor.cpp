@@ -4,7 +4,7 @@
  * @author Michael Allwright - <allsey87@gmail.com>
  */
 
-#include "drone_system_default_sensor.h"
+#include <argos3/plugins/robots/drone/simulator/drone_system_default_sensor.h>
 
 #include <argos3/core/utility/logging/argos_log.h>
 #include <argos3/core/simulator/simulator.h>
